@@ -18,8 +18,8 @@ class User < ApplicationRecord
 
   # include FriendlyId
   # friendly_id :full_name, use: [:slugged, :history, :finders]
-
-  def full_name
-    "#{first_name} #{last_name}".strip
-  end
+  #
+  # def full_name
+  #   "#{first_name} #{last_name}".strip
+  # end
 end

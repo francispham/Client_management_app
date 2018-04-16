@@ -14,7 +14,7 @@ super_user = User.create(
 
 
 
-5.times.each do
+3.times.each do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
 
@@ -33,16 +33,16 @@ users = User.all
   c = Client.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    email: "#{first_name.downcase}.#{last_name.downcase}@example.com",
+    email: "#{Faker::Name.first_name.downcase}.#{Faker::Name.last_name.downcase}@example.com",
     phone_number: Faker::PhoneNumber.cell_phone,
-    age: Client::STATES.sample,
+    age: Faker::Number,
     address: Faker::Address.street_address,
     postal_code:Faker::Address.postcode,
     user: users.sample
   )
   if c.valid?
     rand(0..5).times.each do
-      l = LaserServices.create(
+      LaserServices.create(
         title: Faker::StarWars.quote,
         health_condition: Faker::Seinfeld.quote,
         client: c,

@@ -5,7 +5,8 @@ class Client < ApplicationRecord
 
   validates :first_name, :last_name, :address, :postal_code, presence: true
 
-  validates :phone_number, :age, presence: true, numericality: { only_integer: true }
+  validates :phone_number, :age, presence: true
+      # , numericality: { only_integer: true }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
@@ -18,9 +19,9 @@ class Client < ApplicationRecord
   # include FriendlyId
   # friendly_id :full_name, use: [:slugged, :history, :finders]
 
-  def full_name
-    "#{first_name} #{last_name}".strip
-
-  end
+  # def full_name
+  #   "#{first_name} #{last_name}".strip
+  #
+  # end
 
 end

@@ -1,41 +1,63 @@
 class ClientsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :find_client, except: [:new, :index, :create]
 
-  before_action :authenticate_user!
-  before_action :find_laser_service, :authorize_user!, only: [:destroy]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
 
-def create
-  @client = Client.find params[:client_id]
-  @laser_service = LaserService.new laser_service_params
-  @laser_service.client = @client
-  @laser_service.user = current_user
-
-  if @laser_service.save
-    redirect_to client_path(@client)
-  else
-    @laser_services = @client.laser_services.order(created_at: :desc)
-    render 'clients/show'
+  def index
+    @clients = Client.all.order(created_at: :desc)
   end
-end
 
+  def show
+  end
+
+  def new
+    @client = Client.new
+  end
+
+  def create
+    @client = Client.new client_params
+    @client.user = current_user
+
+    if @client.save
+      redirect_to client_path(@client)
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    @client.slug = nil
+    if @client.update client_params
+      redirect_to client_path(@client)
+    else
+      render :edit
+    end
+  end
 
   def destroy
-    @laser_service.destroy
-    redirect_to client_path(@laser_service.client)
+    @client.destroy
+    redirect_to clients_path
   end
+
 
   private
-  def laser_service_params
-    params.require(:laser_service).permit(:body)
+  def find_client
+    @client = Client.find params[:id]
   end
 
-  def find_laser_service
-    @laser_service ||= LaserService.find params[:id]
+  def client_params
+    params.require(:client).permit(:first_name, :last_name, :email, :phone_number, :age, :address, :postal_code)
   end
 
   def authorize_user!
-    unless can?(:manage, @laser_service)
-      flash[:alert] = 'Access Denied!'
-      redirect_to client_path(@laser_service.client)
+    unless can?(:curd, @client)
+      flash[:alert] = "Access Denied!"
+      redirect_to client_path(@client)
     end
   end
+
 end

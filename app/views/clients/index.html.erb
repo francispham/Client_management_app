@@ -1,0 +1,5 @@
+<% @clients.each do |client| %>
+  <div class="client-list-item">
+    <%= link_to client.first_name, client_path(client) %>
+  </div>
+<% end %>
