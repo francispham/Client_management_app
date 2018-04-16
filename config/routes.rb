@@ -7,4 +7,9 @@ Rails.application.routes.draw do
   resources :answers, shallow: true
 
   get('/', { to: 'welcome#index', as: :root })
+
+  namespace :admin do
+    resources :dashboard, only: [:index]
+  end
+
 end

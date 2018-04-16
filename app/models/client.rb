@@ -15,8 +15,8 @@ class Client < ApplicationRecord
             format: VALID_EMAIL_REGEX,
             unless: :from_oauth?
 
-  include FriendlyId
-  friendly_id :full_name, use: [:slugged, :history, :finders]
+  # include FriendlyId
+  # friendly_id :full_name, use: [:slugged, :history, :finders]
 
   def full_name
     "#{first_name} #{last_name}".strip

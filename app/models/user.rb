@@ -4,23 +4,22 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  before_validation :set_view_count
+  # before_validation :set_view_count
 
-  valiates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, presence: true
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
   validates :email,
             presence: true,
             uniqueness: true,
-            format: VALID_EMAIL_REGEX,
-            unless: :from_oauth?
+            format: VALID_EMAIL_REGEX
+            # unless: :from_oauth?
 
-  include FriendlyId
-  friendly_id :full_name, use: [:slugged, :history, :finders]
+  # include FriendlyId
+  # friendly_id :full_name, use: [:slugged, :history, :finders]
 
   def full_name
     "#{first_name} #{last_name}".strip
-
   end
 end
