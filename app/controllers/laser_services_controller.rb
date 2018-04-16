@@ -1,0 +1,2 @@
+class LaserServicesController < ApplicationController
+end

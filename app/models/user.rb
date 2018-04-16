@@ -1,8 +1,9 @@
 class User < ApplicationRecord
   has_many :clients, dependent: :nullify
+  has_many :laser_services, dependent: :nullify
 
   has_secure_password
-  
+
   before_validation :set_view_count
 
   valiates :first_name, :last_name, presence: true

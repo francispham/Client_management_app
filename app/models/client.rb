@@ -1,7 +1,7 @@
 class Client < ApplicationRecord
   belongs_to :users
 
-  before_validation :set_view_count
+  has_many :laser_services, dependent: :destroy
 
   validates :first_name, :last_name, :address, :postal_code, presence: true
 

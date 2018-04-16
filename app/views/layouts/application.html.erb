@@ -13,13 +13,9 @@
     <nav>
        <%= link_to 'Home', root_path %>
        |
-       <%= link_to 'New Question', new_question_path %>
+       <%= link_to 'New Client', new_client_path %>
        |
-       <%= link_to 'Questions', questions_path %>
-       |
-       <%= link_to 'About Us', about_path %>
-       |
-       <%= link_to 'Contact Us', contact_new_path %>
+       <%= link_to 'Client', clients_path %>
        |
        <% if user_signed_in? %>
          <span>Hello, <%= current_user.first_name %>!</span>
