@@ -1,0 +1,5 @@
+<%= simple_form_for @laser_service, :url =>{:action => :create} do |f| %>
+  <%= f.input :title %>
+  <%= f.input :health_condition %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

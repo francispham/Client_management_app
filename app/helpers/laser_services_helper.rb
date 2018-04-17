@@ -1,0 +1,2 @@
+module LaserServicesHelper
+end
