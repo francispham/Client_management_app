@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'faker', '~> 1.8.7'
+gem 'cowsay'
 gem 'cancancan', '~> 2.0'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0'
