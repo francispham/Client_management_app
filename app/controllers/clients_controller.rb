@@ -9,6 +9,7 @@ class ClientsController < ApplicationController
   end
 
   def show
+    @laser_services = LaserService.where(client_id: @client.id)
   end
 
   def new
@@ -30,7 +31,6 @@ class ClientsController < ApplicationController
   end
 
   def update
-    @client.slug = nil
     if @client.update client_params
       redirect_to client_path(@client)
     else
@@ -50,7 +50,8 @@ class ClientsController < ApplicationController
   end
 
   def client_params
-    params.require(:client).permit(:first_name, :last_name, :email, :phone_number, :age, :address, :postal_code)
+    params.require(:client).permit(:first_name, :last_name, :email,
+    :phone_number, :age, :address, :postal_code)
   end
 
   def authorize_user!

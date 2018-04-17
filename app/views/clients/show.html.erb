@@ -1,0 +1,50 @@
+<h2><%= @client.first_name %></h2>
+<p><strong>Email:</strong> <%= @client.email %></p>
+<p><strong>Phone Number:</strong> <%= @client.phone_number %></p>
+<p><strong>Age:</strong> <%= @client.age %></p>
+<p><strong>Address:</strong> <%= @client.address %></p>
+<p><strong>Postal Code:</strong> <%= @client.postal_code %></p>
+<div>
+  <small>
+    Posted
+    <%= time_ago_in_words(@client.created_at) %>
+    ago
+  </small>
+  *
+  <small>
+  Last edited
+  <%= time_ago_in_words(@client.updated_at) %>
+  ago
+  </small>
+  *
+  <small>
+  By <%= @client.user&.first_name || '[DELETED]' %>
+  </small>
+</div>
+
+<div>
+  <% if can?(:update, @client) %>
+    <%= link_to 'Edit', edit_client_path(@client) %>
+  <% end %>
+
+  <% if can?(:destroy, @client) %>
+    <%= link_to 'Delete',
+      client_path(@client),
+      method: :delete,
+      data: {
+        confirm: 'Are you sure?'
+      }
+    %>
+  <% end %>
+
+  <% if can?(:new, @client) %>
+    <%= link_to 'Add New Services', new_client_laser_service_path(@client) %>
+  <% end %>
+<br>=============================
+<div class="services-list">
+  <h3>List of Services</h3>
+  <% @laser_services.each do |ls| %>
+  <strong><%= ls.id %>.</strong>
+  <%= ls.title %> <br>
+  <% end %>
+</div>

@@ -39,7 +39,7 @@ class Ability
       can :manage, Client do |client|
         client.user == user
       end
-      can :manage, LaserServices do |laser_service|
+      can :manage, LaserService do |laser_service|
         laser_service.user == user
       end
     end

@@ -30,10 +30,13 @@ users = User.all
 
 
 10.times.each do
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+
   c = Client.create(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: "#{Faker::Name.first_name.downcase}.#{Faker::Name.last_name.downcase}@example.com",
+    first_name: first_name,
+    last_name: last_name,
+    email: "#{first_name.downcase}.#{last_name.downcase}@example.com",
     phone_number: Faker::PhoneNumber.cell_phone,
     age: Faker::Number,
     address: Faker::Address.street_address,
@@ -41,8 +44,8 @@ users = User.all
     user: users.sample
   )
   if c.valid?
-    rand(0..5).times.each do
-      LaserServices.create(
+    rand(0..15).times.each do
+      LaserService.create(
         title: Faker::StarWars.quote,
         health_condition: Faker::Seinfeld.quote,
         client: c,
@@ -53,10 +56,11 @@ users = User.all
 end
 
 clients = Client.all
-laser_services = LaserServices.all
+laser_services = LaserService.all
 
-puts Cowsay.say "Created #{clients.count} clients", :frogs
+puts Cowsay.say "Created #{users.count} users", :tux
+puts Cowsay.say "Created #{clients.count} clients", :kitty
 puts Cowsay.say "Created #{laser_services.count} laser_services", :sheep
 
 puts "Login as admin with #{super_user.email} and password of '#{PASSWORD}'"
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
