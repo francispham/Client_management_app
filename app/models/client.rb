@@ -5,7 +5,7 @@ class Client < ApplicationRecord
 
   validates :first_name, :last_name, :address, :postal_code, presence: true
 
-  validates :phone_number, :age, presence: true
+  # validates :phone_number, :age, presence: true
 
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
