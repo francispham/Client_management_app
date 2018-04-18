@@ -1,27 +1,20 @@
-<h2><%= @client.first_name %></h2>
+<h3><%= @client.first_name %></h3>
 <p><strong>Email:</strong> <%= @client.email %></p>
 <p><strong>Phone Number:</strong> <%= @client.phone_number %></p>
 <p><strong>Age:</strong> <%= @client.age %></p>
 <p><strong>Address:</strong> <%= @client.address %></p>
 <p><strong>Postal Code:</strong> <%= @client.postal_code %></p>
-<div>
-  <small>
-    Posted
-    <%= time_ago_in_words(@client.created_at) %>
-    ago
-  </small>
-  *
-  <small>
-  Last edited
-  <%= time_ago_in_words(@client.updated_at) %>
-  ago
-  </small>
-  *
-  <small>
-  By <%= @client.user&.first_name || '[DELETED]' %>
-  </small>
+<br>
+<h4>Consultation Interested:</h4>
+<div class="tag-list">
+  <% @client.categories.order(:name).each do |category| %>
+    <span class="badge badge-pill badge-primary">
+      <%= category.name %>
+    </span>
+  <% end %>
 </div>
 
+<br>==============================
 <div>
   <% if can?(:update, @client) %>
     <%= link_to 'Edit', edit_client_path(@client) %>
@@ -36,11 +29,27 @@
       }
     %>
   <% end %>
-
   <% if can?(:new, @client) %>
     <%= link_to 'Add New Services', new_client_laser_service_path(@client) %>
   <% end %>
-<br>=============================
+  <div>
+    <small>
+      Posted
+      <%= time_ago_in_words(@client.created_at) %>
+      ago
+    </small>
+    *
+    <small>
+    Last edited
+    <%= time_ago_in_words(@client.updated_at) %>
+    ago
+    </small>
+    *
+    <small>
+    By <%= @client.user&.first_name || '[DELETED]' %>
+    </small>
+  </div>
+<br>==============================
 <div class="services-list">
   <h3>List of Services</h3>
   <% @laser_services.each do |ls| %>

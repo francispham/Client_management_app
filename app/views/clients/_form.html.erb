@@ -6,6 +6,10 @@
   <%= f.input :age, collection: 11..90 %>
   <%= f.input :address %>
   <%= f.input :postal_code %>
+  <h4>I am Interested in:</h4>
+  <div class="tag">
+      <%= f.association :categories, input_html: { class: 'chosen-select' } %>
+  </div>
 
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
