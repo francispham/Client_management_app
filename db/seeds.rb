@@ -31,7 +31,14 @@ users = User.all
 
 10.times.each do
   Category.create(
-    name: Faker::Book.genre
+    name: Faker::Team.state
+    # ['Laser hair removal', 'Microdermabrasion', 'Acne treatment',
+    #        'Skin rejuvenation/Photorejuvnation',
+    #        'Fillers (Juverderm/Restylane/Perlane)',
+    #        'Varicose vein/Spider vein treatment',
+    #        'Skin care advise/Products', 'Liver spots/Age spots',
+    #        'Facial vein treatements', 'Botox', 'Rosacea', 'Thermage',
+    #        'Body contouring']
   )
 end
 
@@ -68,6 +75,7 @@ clients = Client.all
 laser_services = LaserService.all
 
 puts Cowsay.say "Created #{users.count} users", :tux
+puts Cowsay.say "Created #{categories.count} categories", :tux
 puts Cowsay.say "Created #{clients.count} clients", :kitty
 puts Cowsay.say "Created #{laser_services.count} laser_services", :sheep
 

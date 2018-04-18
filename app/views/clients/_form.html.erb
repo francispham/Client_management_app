@@ -4,6 +4,7 @@
   <%= f.input :email %>
   <%= f.input :phone_number %>
   <%= f.input :age, collection: 11..90 %>
+  <%= f.input :gender, as: :radio_buttons, collection: [['Female', 'female'], ['Male', 'male']], label_method: :second, value_method: :first %>
   <%= f.input :address %>
   <%= f.input :postal_code %>
   <h4>I am Interested in:</h4>
@@ -11,5 +12,5 @@
       <%= f.association :categories, input_html: { class: 'chosen-select' } %>
   </div>
 
-  <%= f.submit class: 'btn btn-primary' %>
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
 <% end %>
