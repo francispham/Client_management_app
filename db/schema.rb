@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180416205554) do
+ActiveRecord::Schema.define(version: 20180418234921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categorizings", force: :cascade do |t|
+    t.string "name"
+    t.bigint "client_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_categorizings_on_category_id"
+    t.index ["client_id"], name: "index_categorizings_on_client_id"
+  end
 
   create_table "clients", force: :cascade do |t|
     t.string "first_name"
@@ -26,6 +42,8 @@ ActiveRecord::Schema.define(version: 20180416205554) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "gender"
+    t.date "date_of_birth"
     t.index ["user_id"], name: "index_clients_on_user_id"
   end
 
@@ -51,6 +69,8 @@ ActiveRecord::Schema.define(version: 20180416205554) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "categorizings", "categories"
+  add_foreign_key "categorizings", "clients"
   add_foreign_key "clients", "users"
   add_foreign_key "laser_services", "clients"
   add_foreign_key "laser_services", "users"
