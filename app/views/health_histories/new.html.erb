@@ -1,7 +1,6 @@
-<%= simple_form_for :health_histories do |f| %>
-  <%= f.input :medical_condition, as: :check_boxes,
-    collection: [['Acne', 'acne'], ['Arthritis', 'arthritis'],
-    ['Autoimmune disorder (eg Lupus)', 'Autoimmune disorder (eg Lupus)']],
-    label_method: :second, value_method: :first, class: 'flex' %>
+<%= simple_form_for @health_history, url: client_health_histories_path do |f| %>
+  <%= f.input :medical_condition, as: :radio_buttons,
+    collection: [['Acne', 'acne'], ['Arthritis', 'arthritis']],
+    label_method: :second, value_method: :first %>
   <%= f.submit 'Submit', class: 'btn btn-primary' %>
 <% end %>

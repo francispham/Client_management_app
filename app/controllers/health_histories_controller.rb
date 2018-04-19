@@ -11,7 +11,8 @@ class HealthHistoriesController < ApplicationController
     if @health_history.save
       redirect_to client_path(@client)
     else
-      # @health_histories = @client.health_histories.order(created_at: :desc)
+      @health_histories = @client.health_histories.order(created_at: :desc)
+      puts 'no SAVING'
       render 'clients/show'
     end
   end
