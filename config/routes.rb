@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :clients, shallow: true do
     resources :laser_services, only: [:create, :destory, :new]
+    resources :health_histories, only: [:create, :destory, :new]
   end
   get('/', { to: 'welcome#index', as: :root })
 

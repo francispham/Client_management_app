@@ -1,0 +1,7 @@
+<%= simple_form_for :health_histories do |f| %>
+  <%= f.input :medical_condition, as: :check_boxes,
+    collection: [['Acne', 'acne'], ['Arthritis', 'arthritis'],
+    ['Autoimmune disorder (eg Lupus)', 'Autoimmune disorder (eg Lupus)']],
+    label_method: :second, value_method: :first, class: 'flex' %>
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>
