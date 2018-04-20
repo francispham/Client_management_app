@@ -1,10 +1,9 @@
 class CreateHealthHistories < ActiveRecord::Migration[5.1]
   def change
     create_table :health_histories do |t|
-      t.text :medical_condition
       t.text :had_botox
       t.text :had_tatoos
-      t.text :had_endocrinologiiest
+      t.text :had_endocrinologiest
       t.text :had_gold_therapy
       t.text :sunscreen
       t.numeric :spf

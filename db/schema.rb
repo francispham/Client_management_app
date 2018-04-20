@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180419021739) do
+ActiveRecord::Schema.define(version: 20180419180553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,10 +48,9 @@ ActiveRecord::Schema.define(version: 20180419021739) do
   end
 
   create_table "health_histories", force: :cascade do |t|
-    t.text "medical_condition"
     t.text "had_botox"
     t.text "had_tatoos"
-    t.text "had_endocrinologiiest"
+    t.text "had_endocrinologiest"
     t.text "had_gold_therapy"
     t.text "sunscreen"
     t.decimal "spf"
@@ -84,6 +83,21 @@ ActiveRecord::Schema.define(version: 20180419021739) do
     t.index ["user_id"], name: "index_laser_services_on_user_id"
   end
 
+  create_table "medical_histories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "medical_historings", force: :cascade do |t|
+    t.bigint "health_history_id"
+    t.bigint "medical_history_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["health_history_id"], name: "index_medical_historings_on_health_history_id"
+    t.index ["medical_history_id"], name: "index_medical_historings_on_medical_history_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -101,4 +115,6 @@ ActiveRecord::Schema.define(version: 20180419021739) do
   add_foreign_key "health_histories", "clients"
   add_foreign_key "laser_services", "clients"
   add_foreign_key "laser_services", "users"
+  add_foreign_key "medical_historings", "health_histories"
+  add_foreign_key "medical_historings", "medical_histories"
 end
