@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418234921) do
+ActiveRecord::Schema.define(version: 20180419180553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,31 @@ ActiveRecord::Schema.define(version: 20180418234921) do
     t.index ["user_id"], name: "index_clients_on_user_id"
   end
 
+  create_table "health_histories", force: :cascade do |t|
+    t.text "had_botox"
+    t.text "had_tatoos"
+    t.text "had_endocrinologiest"
+    t.text "had_gold_therapy"
+    t.text "sunscreen"
+    t.decimal "spf"
+    t.boolean "sunbathe?"
+    t.boolean "sunbathe_sixweek?"
+    t.boolean "tanning_bed?"
+    t.boolean "tanning_sixweek?"
+    t.text "ethic"
+    t.boolean "pregnant?"
+    t.boolean "becoming_pregnant?"
+    t.date "nursing_until"
+    t.boolean "menopausal?"
+    t.boolean "hormone_replacement?"
+    t.string "acne_menstrual_cycle"
+    t.text "birth_control"
+    t.bigint "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_health_histories_on_client_id"
+  end
+
   create_table "laser_services", force: :cascade do |t|
     t.string "title"
     t.text "health_condition"
@@ -56,6 +81,21 @@ ActiveRecord::Schema.define(version: 20180418234921) do
     t.bigint "user_id"
     t.index ["client_id"], name: "index_laser_services_on_client_id"
     t.index ["user_id"], name: "index_laser_services_on_user_id"
+  end
+
+  create_table "medical_histories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "medical_historings", force: :cascade do |t|
+    t.bigint "health_history_id"
+    t.bigint "medical_history_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["health_history_id"], name: "index_medical_historings_on_health_history_id"
+    t.index ["medical_history_id"], name: "index_medical_historings_on_medical_history_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -72,6 +112,9 @@ ActiveRecord::Schema.define(version: 20180418234921) do
   add_foreign_key "categorizings", "categories"
   add_foreign_key "categorizings", "clients"
   add_foreign_key "clients", "users"
+  add_foreign_key "health_histories", "clients"
   add_foreign_key "laser_services", "clients"
   add_foreign_key "laser_services", "users"
+  add_foreign_key "medical_historings", "health_histories"
+  add_foreign_key "medical_historings", "medical_histories"
 end

@@ -34,6 +34,9 @@
   <% if can?(:new, @client) %>
     <%= link_to 'Add New Services', new_client_laser_service_path(@client) %>
   <% end %>
+  <% if can?(:new, @health_history) %>
+    <%= link_to 'Add Health History', new_client_health_history_path(@client) %>
+  <% end %>
   <div>
     <small>
       Posted
@@ -52,11 +55,39 @@
     </small>
   </div>
 <br>==============================
-<br>==============================
 <div class="services-list">
-  <h2>List of Services</h2>
+  <h2>Laser Form Information</h2>
   <% @laser_services.each do |ls| %>
   <strong><%= ls.id %>.</strong>
   <%= ls.title %> <br>
   <% end %>
 </div>
+<br>==============================
+<div class="histories-list">
+  <p><%= link_to 'Health History', health_history_path(@client)%></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->

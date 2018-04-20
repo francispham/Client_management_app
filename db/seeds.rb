@@ -79,5 +79,5 @@ puts Cowsay.say "Created #{categories.count} categories", :tux
 puts Cowsay.say "Created #{clients.count} clients", :kitty
 puts Cowsay.say "Created #{laser_services.count} laser_services", :sheep
 
-# puts "Login as admin with #{super_user.email} and password of '#{PASSWORD}'"
+puts "Login as admin with #{super_user.email} and password of '#{PASSWORD}'"
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

@@ -1,0 +1,29 @@
+<div class="histories-list">
+  <h2>Health History</h2>
+  <% @health_histories.each do |hs| %>
+    <strong>Medical History:</strong>
+    <% hs.medical_histories.order(:name).each do |mh| %>
+      <span class="badge badge-pill badge-primary">
+        <%= mh.name %>
+      </span>
+    <% end %>
+    <p><strong>Botox Used:</strong> <%= hs.had_botox %></p>
+    <p><strong>Tatoos or Permanent Makeup:</strong> <%= hs.had_tatoos %></p>
+    <p><strong>Treated by an Endocrinologist:</strong> <%= hs.had_endocrinologiest %></p>
+    <p><strong>Had Gold Therapy:</strong> <%= hs.had_gold_therapy %></p>
+
+    <p><strong>Sun Exposure/ Tanning Habits: </strong> </p>
+    <p><strong>Use of Sunscreen:</strong> <%= hs.sunscreen %></p>
+    <p><strong>SPF#:</strong> <%= hs.spf %></p>
+    <p><strong>Sunbatthe for tanning:</strong> <%= hs.sunbathe? %></p>
+
+    <p><strong>For Women Only -Check any that currently apply </strong> </p>
+    <p><strong>Pregnancy:</strong> <%= hs.pregnant? %></p>
+    <p><strong>Expecting Pregnancy:</strong> <%= hs.becoming_pregnant? %></p>
+    <p><strong>Nursing Until:</strong> <%= hs.nursing_until %></p>
+    <p><strong>Use of Birth Control:</strong> <%= hs.birth_control %></p>
+    <p><strong>Menopausal:</strong> <%= hs.menopausal? %></p>
+    <p><strong>Using Method Replacement Therapy:</strong> <%= hs.hormone_replacement? %></p>
+    <p><strong>Related to Menstrual Cycle:</strong> <%= hs.acne_menstrual_cycle? %></p>
+ <% end %>
+</div>
