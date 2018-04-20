@@ -39,6 +39,8 @@ gem "chosen-rails"
 gem 'rack-cors', :require => 'rack/cors'
 gem 'simple_form'
 gem 'devise'
+gem 'rails_12factor'
+gem 'webpacker'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
