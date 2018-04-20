@@ -7,6 +7,7 @@ class Client < ApplicationRecord
   has_many :categories, through: :categorizings
 
   has_many :laser_services, dependent: :destroy
+  has_many :client_service_records, dependent: :destroy
 
   validates :first_name, :last_name, :address, :postal_code, presence: true
 

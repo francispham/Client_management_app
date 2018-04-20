@@ -10,7 +10,6 @@ class ClientsController < ApplicationController
 
   def show
     @laser_services = LaserService.where(client_id: @client.id)
-    @health_histories = HealthHistory.where(client_id: @client.id)
   end
 
   def new

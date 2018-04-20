@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180419180553) do
+ActiveRecord::Schema.define(version: 20180420200324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,21 @@ ActiveRecord::Schema.define(version: 20180419180553) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_categorizings_on_category_id"
     t.index ["client_id"], name: "index_categorizings_on_client_id"
+  end
+
+  create_table "client_service_records", force: :cascade do |t|
+    t.text "name"
+    t.text "treatment"
+    t.time "start"
+    t.time "end"
+    t.text "observations"
+    t.string "esthetician"
+    t.bigint "client_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_client_service_records_on_client_id"
+    t.index ["user_id"], name: "index_client_service_records_on_user_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -111,6 +126,8 @@ ActiveRecord::Schema.define(version: 20180419180553) do
 
   add_foreign_key "categorizings", "categories"
   add_foreign_key "categorizings", "clients"
+  add_foreign_key "client_service_records", "clients"
+  add_foreign_key "client_service_records", "users"
   add_foreign_key "clients", "users"
   add_foreign_key "health_histories", "clients"
   add_foreign_key "laser_services", "clients"
