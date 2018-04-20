@@ -10,6 +10,7 @@ class ClientsController < ApplicationController
 
   def show
     @laser_services = LaserService.where(client_id: @client.id)
+    @health_histories = HealthHistory.where(client_id: @client.id)
   end
 
   def new
@@ -51,7 +52,7 @@ class ClientsController < ApplicationController
 
   def client_params
     params.require(:client).permit(:first_name, :last_name, :email,
-    :phone_number, :age, :address, :postal_code)
+    :phone_number, :age, :address, :gender, :postal_code, :date_of_birth, category_ids: [])
   end
 
   def authorize_user!

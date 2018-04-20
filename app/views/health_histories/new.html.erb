@@ -1,0 +1,23 @@
+<%= simple_form_for @health_history, url: client_health_histories_path do |f| %>
+  <%= f.association :medical_histories, input_html: { class: 'chosen-select' } %>
+  <%= f.input :had_botox, label: 'Have you ever had Botox? When?' %>
+  <%= f.input :had_tatoos, label: 'Do you have any tatoos or permanent makeup? if yes, please specify.' %>
+  <%= f.input :had_endocrinologiest, label: 'Have you ever been treated by an Endocrinologist (hormone imbalance)? If yes, please specify.' %>
+  <%= f.input :had_gold_therapy, label: 'Have you ever had Gold Therapy? (Used for rheumatoid arthritis)' %>
+
+  <p><strong>Sun Exposure/ Tanning Habits: </strong> </p>
+  <%= f.input :sunscreen, label: 'I appply sunscreen on exposed skin:' %>
+  <%= f.input :spf, label: 'I generally use a sunscreen with SPF #' %>
+  <%= f.input :sunbathe?, as: :boolean, checked_value: true, unchecked_value: false, label: 'Do you ever sunbatthe to achieve a tan?' %>
+
+  <p><strong>For Women Only -Check any that currently apply: </strong> </p>
+  <%= f.input :pregnant?, as: :boolean, checked_value: true, unchecked_value: false, label: 'Are you pregnant?' %>
+  <%= f.input :becoming_pregnant?, as: :boolean, checked_value: true, unchecked_value: false, label: 'Are you pregnant?' %>
+  <%= f.input :nursing_until, label: 'Nursing Until' %>
+  <%= f.input :birth_control, label: 'Birth Control (Which method?)' %>
+  <%= f.input :menopausal?, as: :boolean, checked_value: true, unchecked_value: false, label: 'Menopausal' %>
+  <%= f.input :hormone_replacement?, as: :boolean, checked_value: true, unchecked_value: false, label: 'Using Method Replacement Therapy' %>
+  <%= f.input :acne_menstrual_cycle, as: :boolean, checked_value: true, unchecked_value: false, collection: [['Acne flare-ups that seem related to menstrual cycle', '']], label_method: :second, value_method: :first %>
+
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>

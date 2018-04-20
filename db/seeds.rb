@@ -1,6 +1,7 @@
 PASSWORD = 'supersecret'
 
 User.destroy_all
+Category.destroy_all
 LaserService.destroy_all
 Client.destroy_all
 
@@ -28,6 +29,20 @@ end
 
 users = User.all
 
+10.times.each do
+  Category.create(
+    name: Faker::Team.state
+    # ['Laser hair removal', 'Microdermabrasion', 'Acne treatment',
+    #        'Skin rejuvenation/Photorejuvnation',
+    #        'Fillers (Juverderm/Restylane/Perlane)',
+    #        'Varicose vein/Spider vein treatment',
+    #        'Skin care advise/Products', 'Liver spots/Age spots',
+    #        'Facial vein treatements', 'Botox', 'Rosacea', 'Thermage',
+    #        'Body contouring']
+  )
+end
+
+categories = Category.all
 
 10.times.each do
   first_name = Faker::Name.first_name
@@ -44,21 +59,23 @@ users = User.all
     user: users.sample
   )
   if c.valid?
-    rand(0..15).times.each do
+    rand(0..2).times.each do
       LaserService.create(
-        title: Faker::StarWars.quote,
+        title: Faker::Educator.campus,
         health_condition: Faker::Seinfeld.quote,
         client: c,
         user: users.sample
       )
     end
   end
+  c.categories = categories.shuffle.slice(0..rand(3))
 end
 
 clients = Client.all
 laser_services = LaserService.all
 
 puts Cowsay.say "Created #{users.count} users", :tux
+puts Cowsay.say "Created #{categories.count} categories", :tux
 puts Cowsay.say "Created #{clients.count} clients", :kitty
 puts Cowsay.say "Created #{laser_services.count} laser_services", :sheep
 
