@@ -48,7 +48,7 @@ puts Cowsay.say "Created #{users.count} users", :tux
 puts Cowsay.say "Created #{clients.count} clients", :kitty
 
 puts "Login as admin with #{super_user.email} and password of '#{PASSWORD}'"
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
 MedicalHistory.create([
   {name: 'Acne'}, {name: 'Arthiritis'}, {name: 'Autoimmune disorder (eg Lupus)'},
   {name: 'Blood disorders'}, {name: 'Cancer (or radiation therapy)'},
