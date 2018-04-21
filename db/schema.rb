@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180421003623) do
+ActiveRecord::Schema.define(version: 20180421181550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,16 +100,16 @@ ActiveRecord::Schema.define(version: 20180421003623) do
     t.text "had_gold_therapy"
     t.text "sunscreen"
     t.decimal "spf"
-    t.boolean "sunbathe?"
-    t.boolean "sunbathe_sixweek?"
-    t.boolean "tanning_bed?"
-    t.boolean "tanning_sixweek?"
+    t.string "sunbathe"
+    t.string "sunbathe_sixweek"
+    t.string "tanning_bed"
+    t.string "tanning_sixweek"
     t.text "ethic"
-    t.boolean "pregnant?"
-    t.boolean "becoming_pregnant?"
+    t.string "pregnant"
+    t.string "becoming_pregnant"
     t.date "nursing_until"
-    t.boolean "menopausal?"
-    t.boolean "hormone_replacement?"
+    t.string "menopausal"
+    t.string "hormone_replacement"
     t.string "acne_menstrual_cycle"
     t.text "birth_control"
     t.bigint "client_id"

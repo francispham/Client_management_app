@@ -81,3 +81,4 @@ puts Cowsay.say "Created #{laser_services.count} laser_services", :sheep
 
 puts "Login as admin with #{super_user.email} and password of '#{PASSWORD}'"
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+MedicalHistory.create([{name: 'Acne'}, {name: 'Arthiritis'}, {name: 'Autoimmunte'},{name: 'Blood disorders'}])
