@@ -34,7 +34,7 @@ class HealthHistoriesController < ApplicationController
     params.require(:health_history).permit(:had_botox,
       :had_tatoos, :had_endocrinologiest, :had_gold_therapy, :sunscreen,
       :spf, :sunbathe, :sunbathe_sixweek, :tanning_bed, :tanning_sixweek,
-      :ethic, :pregnant, :becoming_pregnant?, :nursing_until, :menopausal,
+      :ethic, :pregnant, :becoming_pregnant, :nursing_until, :menopausal,
       :hormone_replacement, :acne_menstrual_cycle, :birth_control,
       medical_history_ids: []
     )

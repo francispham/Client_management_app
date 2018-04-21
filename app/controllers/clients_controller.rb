@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!
   before_action :find_client, except: [:new, :index, :create]
 
   before_action :authorize_user!, only: [:edit, :update, :destroy]
