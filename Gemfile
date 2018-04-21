@@ -39,6 +39,7 @@ gem "chosen-rails"
 gem 'rack-cors', :require => 'rack/cors'
 gem 'simple_form'
 gem 'devise'
+gem 'activeadmin'
 gem 'rails_12factor'
 gem 'webpacker'
 

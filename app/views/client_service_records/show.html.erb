@@ -1,2 +1,12 @@
-<h3>Show Personal Record</h3>
+<h3>Client Service Record</h3>
+
+  <% @client_service_records.each do |csr| %>
+  <p><strong>Name:</strong> <%= csr.name %></p>
+  <p><strong>Treatment:</strong> <%= csr.treatment %></p>
+  <p><strong>Duration:</strong> <%= csr.end - csr.start %></p>
+  <p><strong>Observations:</strong> <%= csr.observations %></p>
+  <p><strong>Esthetician:</strong> <%= csr.esthetician %></p>
+=    ==    ==    ==    ==    =
+  <% end %>
+===========================<br>
 ||<%= link_to 'Add New Service Record', new_client_client_service_record_path(@client)%>||

@@ -9,10 +9,10 @@ class ClientServiceRecordsController < ApplicationController
     @client_service_record.user = current_user
 
     if @client_service_record.save
-      redirect_to client_path(@client)
+      redirect_to client_service_record_path(@client)
     else
       @client_service_records = @client.client_service_records.order(created_at: :desc)
-      render 'clients/show'
+      render 'client_service_records/show'
     end
   end
 
