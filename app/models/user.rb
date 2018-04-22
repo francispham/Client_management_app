@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :clients, dependent: :nullify
-  has_many :laser_services, dependent: :nullify
+  has_many :services, dependent: :nullify
+  has_many :service_records, dependent: :nullify
+
 
   has_secure_password
 

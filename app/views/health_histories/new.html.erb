@@ -2,22 +2,54 @@
   <%= f.association :medical_histories, input_html: { class: 'chosen-select' } %>
   <%= f.input :had_botox, label: 'Have you ever had Botox? When?' %>
   <%= f.input :had_tatoos, label: 'Do you have any tatoos or permanent makeup? if yes, please specify.' %>
-  <%= f.input :had_endocrinologiest, label: 'Have you ever been treated by an Endocrinologist (hormone imbalance)? If yes, please specify.' %>
+  <%= f.input :had_endocrinologiest, label: 'Have you ever been treated by an
+              Endocrinologist (hormone imbalance)? If yes, please specify.' %>
   <%= f.input :had_gold_therapy, label: 'Have you ever had Gold Therapy? (Used for rheumatoid arthritis)' %>
+==========================================
 
   <p><strong>Sun Exposure/ Tanning Habits: </strong> </p>
-  <%= f.input :sunscreen, label: 'I appply sunscreen on exposed skin:' %>
+  <%= f.input :sunscreen, collection: [['Almost everyday, rain or shine',
+                                        'Almost everyday, rain or shine'],
+                                        ['Just when I know I will be outside',
+                                        'Just when I know I will be outside'],
+                                        ['Rarely or Never', 'Rarely or Never'],
+                                        ['Only on vacation', 'Only on vacation']],
+                                        input_html: { class: 'chosen-select' },
+                                        label: 'I apply sunscreen on exposed skin:' %>
   <%= f.input :spf, label: 'I generally use a sunscreen with SPF #' %>
-  <%= f.input :sunbathe?, as: :boolean, checked_value: true, unchecked_value: false, label: 'Do you ever sunbatthe to achieve a tan?' %>
+  <%= f.input :sunbathe, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No']],
+              label_method: :second, value_method: :first,
+              label: 'Do you ever sunbatthe to achieve a tan?' %>
+  <%= f.input :sunbathe_sixweek, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No']],
+              label_method: :second, value_method: :first,
+              label: 'If yes, has it been within the last 6 wweks?' %>
+  <%= f.input :tanning_bed, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No']],
+              label_method: :second, value_method: :first,
+              label: 'Do you frequent tanning beds to achieve a tan?' %>
+  <%= f.input :tanning_sixweek, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No']],
+              label_method: :second, value_method: :first,
+              label: 'If yes, has it been within the last 6 wweks?' %>
+  <%= f.input :ethic, label: 'What is in your ethnic background? (Examples: Irish,
+              Scottish, Greek, Italian, Hispanic, Indian Descent, Chinese,
+              Mediterranean, Middle Eastern, African American, etc.)' %>
 
+==========================================
+
+<p><strong>Questions for those considering Laser Hair Treatments: </strong> Need to do later!!!!!</p>
+
+==========================================
   <p><strong>For Women Only -Check any that currently apply: </strong> </p>
-  <%= f.input :pregnant?, as: :boolean, checked_value: true, unchecked_value: false, label: 'Are you pregnant?' %>
-  <%= f.input :becoming_pregnant?, as: :boolean, checked_value: true, unchecked_value: false, label: 'Are you pregnant?' %>
+  <%= f.input :pregnant, as: :boolean, checked_value: 'Yes',
+              unchecked_value: 'No', label: 'Are you pregnant?'%>
+  <%= f.input :becoming_pregnant, as: :boolean, checked_value: 'Yes',
+              unchecked_value: 'No', label: 'Do you anticipate becoming pregnant?' %>
   <%= f.input :nursing_until, label: 'Nursing Until' %>
   <%= f.input :birth_control, label: 'Birth Control (Which method?)' %>
-  <%= f.input :menopausal?, as: :boolean, checked_value: true, unchecked_value: false, label: 'Menopausal' %>
-  <%= f.input :hormone_replacement?, as: :boolean, checked_value: true, unchecked_value: false, label: 'Using Method Replacement Therapy' %>
-  <%= f.input :acne_menstrual_cycle, as: :boolean, checked_value: true, unchecked_value: false, collection: [['Acne flare-ups that seem related to menstrual cycle', '']], label_method: :second, value_method: :first %>
-
+  <%= f.input :menopausal, as: :boolean, checked_value: 'Yes',
+              unchecked_value: 'No', label: 'Menopausal' %>
+  <%= f.input :hormone_replacement, as: :boolean, checked_value: 'Yes',
+              unchecked_value: 'No', label: 'Using Method Replacement Therapy' %>
+  <%= f.input :acne_menstrual_cycle, as: :boolean, checked_value: 'Yes',
+              unchecked_value: 'No', label:'Acne flare-ups that seem related to menstrual cycle' %>
   <%= f.submit 'Submit', class: 'btn btn-primary' %>
 <% end %>

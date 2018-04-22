@@ -30,8 +30,9 @@ class Ability
       can :manage, Client do |client|
         client.user == user
       end
-      can :manage, LaserService do |laser_service|
-        laser_service.user == user
+
+      can :manage, Service do |service|
+      service.user == user
       end
     end
 end
