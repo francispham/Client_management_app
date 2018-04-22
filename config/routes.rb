@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :create, :show]
 
   resources :clients, shallow: true do
-    resources :laser_services, only: [:create, :destory, :new]
+    resources :services
     resources :client_service_records, only: [:create, :destory, :new, :show]
     resources :health_histories, only: [:create, :destory, :new, :show]
   end

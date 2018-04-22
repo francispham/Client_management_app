@@ -54,7 +54,7 @@
 <div class="action">
   <strong>Adding:</strong>
   ||<% if can?(:new, @client) %>
-    <%= link_to 'New Services', new_client_laser_service_path(@client) %>
+    <%= link_to 'New Services', new_client_service_path(@client) %>
   <% end %>
   ||<% if can?(:new, @health_history) %>
     <%= link_to 'Health History', new_client_health_history_path(@client) %>
@@ -64,18 +64,11 @@
 
 <div class="view">
   <strong>Viewing:</strong>
+  ||<%= link_to 'Services', client_services_path(@client)%>||
   ||<%= link_to 'Treatments', client_service_record_path(@client)%>||
   <%= link_to 'Health History', health_history_path(@client)%>||
 </div>
 ==============================
-
-<div class="services-list">
-  <h4>Laser Form Information</h4>
-  <% @laser_services.each do |ls| %>
-  <strong><%= ls.id %>.</strong>
-  <%= ls.title %> <br>
-  <% end %>
-</div>
 
 
 

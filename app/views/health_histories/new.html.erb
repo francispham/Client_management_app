@@ -6,6 +6,7 @@
               Endocrinologist (hormone imbalance)? If yes, please specify.' %>
   <%= f.input :had_gold_therapy, label: 'Have you ever had Gold Therapy? (Used for rheumatoid arthritis)' %>
 ==========================================
+
   <p><strong>Sun Exposure/ Tanning Habits: </strong> </p>
   <%= f.input :sunscreen, collection: [['Almost everyday, rain or shine',
                                         'Almost everyday, rain or shine'],
@@ -16,8 +17,26 @@
                                         input_html: { class: 'chosen-select' },
                                         label: 'I apply sunscreen on exposed skin:' %>
   <%= f.input :spf, label: 'I generally use a sunscreen with SPF #' %>
-  <%= f.input :sunbathe, as: :boolean, checked_value: 'Yes', unchecked_value: 'No',
+  <%= f.input :sunbathe, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No']],
+              label_method: :second, value_method: :first,
               label: 'Do you ever sunbatthe to achieve a tan?' %>
+  <%= f.input :sunbathe_sixweek, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No']],
+              label_method: :second, value_method: :first,
+              label: 'If yes, has it been within the last 6 wweks?' %>
+  <%= f.input :tanning_bed, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No']],
+              label_method: :second, value_method: :first,
+              label: 'Do you frequent tanning beds to achieve a tan?' %>
+  <%= f.input :tanning_sixweek, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No']],
+              label_method: :second, value_method: :first,
+              label: 'If yes, has it been within the last 6 wweks?' %>
+  <%= f.input :ethic, label: 'What is in your ethnic background? (Examples: Irish,
+              Scottish, Greek, Italian, Hispanic, Indian Descent, Chinese,
+              Mediterranean, Middle Eastern, African American, etc.)' %>
+
+==========================================
+
+<p><strong>Questions for those considering Laser Hair Treatments: </strong> Need to do later!!!!!</p>
+
 ==========================================
   <p><strong>For Women Only -Check any that currently apply: </strong> </p>
   <%= f.input :pregnant, as: :boolean, checked_value: 'Yes',

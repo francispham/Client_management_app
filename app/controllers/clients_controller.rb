@@ -9,7 +9,6 @@ class ClientsController < ApplicationController
   end
 
   def show
-    @laser_services = LaserService.where(client_id: @client.id)
   end
 
   def new

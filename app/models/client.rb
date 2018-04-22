@@ -1,12 +1,12 @@
 class Client < ApplicationRecord
   belongs_to :user
 
-  has_many :health_histories, dependent: :destroy
+  has_one :health_history, dependent: :destroy
 
   has_many :categorizings, dependent: :destroy
   has_many :categories, through: :categorizings
 
-  has_many :laser_services, dependent: :destroy
+  has_many :services, dependent: :destroy
   has_many :client_service_records, dependent: :destroy
 
   validates :first_name, :last_name, :address, :postal_code, presence: true
