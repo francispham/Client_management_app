@@ -7,7 +7,7 @@ class Client < ApplicationRecord
   has_many :categories, through: :categorizings
 
   has_many :services, dependent: :destroy
-  has_many :client_service_records, dependent: :destroy
+  has_many :service_records, dependent: :nullify
 
   validates :first_name, :last_name, :address, :postal_code, presence: true
 

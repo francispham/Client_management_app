@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_22_002904) do
+ActiveRecord::Schema.define(version: 2018_04_22_040152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,22 @@ ActiveRecord::Schema.define(version: 2018_04_22_002904) do
     t.index ["medical_history_id"], name: "index_medical_historings_on_medical_history_id"
   end
 
+  create_table "service_records", force: :cascade do |t|
+    t.text "treatment"
+    t.time "start"
+    t.time "end"
+    t.text "observations"
+    t.string "esthetician"
+    t.bigint "user_id"
+    t.bigint "client_id"
+    t.bigint "service_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_service_records_on_client_id"
+    t.index ["service_id"], name: "index_service_records_on_service_id"
+    t.index ["user_id"], name: "index_service_records_on_user_id"
+  end
+
   create_table "services", force: :cascade do |t|
     t.string "title"
     t.decimal "session"
@@ -117,6 +133,9 @@ ActiveRecord::Schema.define(version: 2018_04_22_002904) do
   add_foreign_key "health_histories", "clients"
   add_foreign_key "medical_historings", "health_histories"
   add_foreign_key "medical_historings", "medical_histories"
+  add_foreign_key "service_records", "clients"
+  add_foreign_key "service_records", "services"
+  add_foreign_key "service_records", "users"
   add_foreign_key "services", "clients"
   add_foreign_key "services", "users"
 end

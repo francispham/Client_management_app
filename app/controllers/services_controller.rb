@@ -22,10 +22,12 @@ class ServicesController < ApplicationController
   end
 
   def show
+
   end
-  
+
   def index
-    @services = Service.all.order(created_at: :desc)
+    @client = Client.find params[:client_id]
+    @services = Service.where(client_id: @client.id)
   end
 
 

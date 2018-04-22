@@ -1,0 +1,10 @@
+<h3>Service Record</h3>
+
+  <% @service_records.each do |sr| %>
+  <p><strong>Treatment:</strong> <%= sr.treatment %></p>
+  <p><strong>Duration:</strong> <%= ((sr.end - sr.start) / 1.hour).round(2) %><strong>hr</strong> </p>
+  <p><strong>Observations:</strong> <%= sr.observations %></p>
+  <p><strong>Esthetician:</strong> <%= sr.esthetician %></p>
+<% end %>
+=============================<br>
+<%= link_to 'Add New Service Record', new_service_service_record_path(@service)%>||
