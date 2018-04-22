@@ -10,9 +10,9 @@
   <%= f.input :gender, as: :radio_buttons, collection: [['Female', 'female'], ['Male', 'male']], label_method: :second, value_method: :first %>
   <%= f.input :address %>
   <%= f.input :postal_code %>
-  <h4>I am Interested in:</h4>
+================================
   <div class="tag">
-      <%= f.association :categories, input_html: { class: 'chosen-select' } %>
+      <%= f.association :categories, input_html: { class: 'chosen-select' }, label: 'I am interested in' %>
   </div>
 
   <%= f.submit 'Submit', class: 'btn btn-primary' %>

@@ -1,0 +1,10 @@
+<h2>Service Record</h2>
+<%= simple_form_for @service_record,
+    url: service_service_records_path do |f| %>
+  <%= f.input :treatment %>
+  <%= f.input :start %>
+  <%= f.input :end %>
+  <%= f.input :observations %>
+  <%= f.input :esthetician %>
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>

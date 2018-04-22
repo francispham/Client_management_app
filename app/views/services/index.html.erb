@@ -1,0 +1,5 @@
+<% @services.each do |service| %>
+  <div class="service-list-item">
+    <%= link_to service.title, service_path(service) %>
+  </div>
+<% end %>
