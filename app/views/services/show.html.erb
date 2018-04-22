@@ -1,6 +1,7 @@
 <div class="service">
   <h4><%= @service.title %></h4>
   =============================
+  <p><strong>Client:</strong> <%= @client.first_name %></p>
   <p><strong>Number of Sessions:</strong> <%= @service.session %></p>
   <p><strong>Service Detail:</strong> <%= @service.detail %></p>
   <p><strong>Note:</strong> <%= @service.note %></p>
@@ -11,3 +12,10 @@
 </div>
 ===============================<br>
 ||<%= link_to 'Add Treatments', new_service_service_record_path(@service)%>||
+<br>===============================
+<div class="service-records">
+  <h3>Service Records</h3>
+  <% @service_records.each do |sr| %>
+  <p><strong>Created At:</strong> <%= link_to time_ago_in_words(sr.created_at), service_record_path(@service)  %></p>
+  <% end %>
+</div>

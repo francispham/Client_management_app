@@ -1,19 +1,18 @@
 class ServiceRecordsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_service_record, :authorize_user!, only: [:destroy]
+  before_action :find_service_record, except: [:new, :index, :create]
+  before_action :authorize_user!, only: [:destroy]
 
 def create
-  byebug
-  @service = Service.find params[:id]
+  @service = Service.find params[:service_id]
   @service_record = ServiceRecord.new service_record_params
   @service_record.service = @service
-  @service_record.client = @client
+  @service_record.client = Client.find_by(id: @service.client_id)
   @service_record.user = current_user
 
   if @service_record.save
-    redirect_to service_record_path(@client)
+    redirect_to service_record_path(@service)
   else
-    # @service_records = @service.service_records.order(created_at: :desc)
     render :file => 'public/404.html', :status => :not_found, :layout => false
   end
 end
@@ -23,8 +22,8 @@ def new
 end
 
 def show
-  @service = Service.find params[:id]
-  @service_records = ServiceRecord.where(service_id: @service.id)
+  @service = Service.find_by(id: @service_record.service_id)
+  @client = Client.find_by(id: @service.client_id)
 end
 
 def destroy

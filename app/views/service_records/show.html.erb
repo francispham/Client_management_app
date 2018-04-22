@@ -1,10 +1,12 @@
-<h3>Service Record</h3>
-
-  <% @service_records.each do |sr| %>
-  <p><strong>Treatment:</strong> <%= sr.treatment %></p>
-  <p><strong>Duration:</strong> <%= ((sr.end - sr.start) / 1.hour).round(2) %><strong>hr</strong> </p>
-  <p><strong>Observations:</strong> <%= sr.observations %></p>
-  <p><strong>Esthetician:</strong> <%= sr.esthetician %></p>
-<% end %>
-=============================<br>
-<%= link_to 'Add New Service Record', new_service_service_record_path(@service)%>||
+<div class="service-record">
+  <h4><%= @client.first_name %></h4>
+  =============================
+  <p><strong>Service:</strong> <%= @service.title %></p>
+  <p><strong>Treatment:</strong> <%= @service_record.treatment %></p>
+  <p><strong>Duration:</strong> <%= ((@service_record.end - @service_record.start) / 1.hour).round(2) %><strong>hr</strong> </p>
+  <p><strong>Observations:</strong> <%= @service_record.observations %></p>
+  <p><strong>Esthetician:</strong> <%= @service_record.esthetician %></p>
+  =============================<br>
+  ||<%= link_to 'Back To Service', service_path(@service_record)%>||
+  ||<%= link_to 'Add New Service Record', new_service_service_record_path(@service)%>||
+</div>

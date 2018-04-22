@@ -12,8 +12,7 @@ class ServicesController < ApplicationController
     if @service.save
       redirect_to client_path(@client)
     else
-      @services = @client.services.order(created_at: :desc)
-      render 'clients/show'
+      render :file => 'public/404.html', :status => :not_found, :layout => false
     end
   end
 
@@ -22,7 +21,8 @@ class ServicesController < ApplicationController
   end
 
   def show
-
+    @client = Client.find_by(id: @service.client_id)
+    @service_records = ServiceRecord.where(service_id: @service.id)
   end
 
   def index
