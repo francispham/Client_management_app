@@ -2,6 +2,9 @@ PASSWORD = 'supersecret'
 
 User.destroy_all
 Client.destroy_all
+AdminUser.destroy_all
+MedicalHistory.destroy_all
+Category.destroy_all
 
 super_user = User.create(
   first_name: 'Michelle',
@@ -12,20 +15,20 @@ super_user = User.create(
 )
 
 
-User.create(
+User.create([
     {
-    first_name: Rose,
-    last_name: Lin,
-    email: "#{first_name.downcase}.#{last_name.downcase}@stmedispa.com",
+    first_name: "Rose",
+    last_name: "Lin",
+    email: "#kelly@stmedispa.com",
     password: PASSWORD
   },
   {
-    first_name: Anita,
-    last_name: Lin,
-    email: "#{first_name.downcase}.#{last_name.downcase}@stmedispa.com",
+    first_name: "Anitadbd",
+    last_name: "Yeng",
+    email: "anita@stmedispa.com",
     password: PASSWORD
   }
-)
+])
 
 
 
@@ -58,7 +61,10 @@ Category.create([
   {name: 'Rosacea'}, {name: 'Thermage'}, {name: 'Body contouring'}, {name: 'Hepatitic'}
   ])
 
-AdminUser.create!(email: 'js@winterfell.gov', password: PASSWORD, password_confirmation: PASSWORD) if Rails.env.development?
+AdminUser.create!([
+  {email: 'js@winterfell.gov', password: PASSWORD, password_confirmation: PASSWORD},
+  {email: 'michelle@stmedispa.com', password: PASSWORD, password_confirmation: PASSWORD}
+  ])
 
 
 

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resource :session, only: [:new, :create, :destroy]
-    resources :users, only: [:new, :create, :show]
+    # resources :users, only: [:new, :create, :show]
+    resources :users, only: [:create, :show]
 
   resources :clients, shallow: true do
     resources :services, only: [:new, :create, :destoy, :show, :index]
