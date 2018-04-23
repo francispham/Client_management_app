@@ -18,8 +18,9 @@ User.create([
     {
     first_name: "Rose",
     last_name: "Lin",
-    email: "#kelly@stmedispa.com",
-    password: PASSWORD
+    email: "kelly@stmedispa.com",
+    password: PASSWORD,
+    is_admin: true
   },
   {
     first_name: "Anitadbd",
