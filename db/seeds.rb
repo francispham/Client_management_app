@@ -4,48 +4,30 @@ User.destroy_all
 Client.destroy_all
 
 super_user = User.create(
-  first_name: 'Jon',
-  last_name: 'Snow',
-  email: 'js@winterfell.gov',
+  first_name: 'Michelle',
+  last_name: 'Huynh',
+  email: 'michelle@stmedispa.com',
   password: PASSWORD,
   is_admin: true
 )
 
-3.times.each do
-  first_name = Faker::Name.first_name
-  last_name = Faker::Name.last_name
 
-  User.create(
-    first_name: first_name,
-    last_name: last_name,
-    email: "#{first_name.downcase}.#{last_name.downcase}@example.com",
+User.create(
+    {
+    first_name: Rose,
+    last_name: Lin,
+    email: "#{first_name.downcase}.#{last_name.downcase}@stmedispa.com",
     password: PASSWORD
-  )
-end
+  },
+  {
+    first_name: Anita,
+    last_name: Lin,
+    email: "#{first_name.downcase}.#{last_name.downcase}@stmedispa.com",
+    password: PASSWORD
+  }
+)
 
-users = User.all
 
-
-10.times.each do
-  first_name = Faker::Name.first_name
-  last_name = Faker::Name.last_name
-
-  Client.create(
-    first_name: first_name,
-    last_name: last_name,
-    email: "#{first_name.downcase}.#{last_name.downcase}@example.com",
-    phone_number: Faker::PhoneNumber.cell_phone,
-    age: Faker::Number,
-    address: Faker::Address.street_address,
-    postal_code:Faker::Address.postcode,
-    user: users.sample
-  )
-end
-
-clients = Client.all
-
-puts Cowsay.say "Created #{users.count} users", :tux
-puts Cowsay.say "Created #{clients.count} clients", :kitty
 
 puts "Login as admin with #{super_user.email} and password of '#{PASSWORD}'"
 
@@ -64,6 +46,7 @@ MedicalHistory.create([
   {name: 'Keloid scars/Other scars'}, {name: 'History of stroke'},
   {name: 'Heart disease'}, {name: 'High blood pressure'}, {name: 'Thyroid condition'},
   {name: 'Rosacea'}])
+
 Category.create([
   {name: 'Liver sports/Age spots'}, {name: 'Facial vein treatments'}, {name: 'Botox'},
   {name: 'Organic Teeth whitening'}, {name: 'Aqua Hydra-facial'},
@@ -74,6 +57,10 @@ Category.create([
   {name: 'Varicose vein/Spider vein treatment'}, {name: 'Skin care advice/Products'},
   {name: 'Rosacea'}, {name: 'Thermage'}, {name: 'Body contouring'}, {name: 'Hepatitic'}
   ])
+
+AdminUser.create!(email: 'js@winterfell.gov', password: PASSWORD, password_confirmation: PASSWORD) if Rails.env.development?
+
+
 
 
 

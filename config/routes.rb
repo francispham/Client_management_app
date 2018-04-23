@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  # devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   resource :session, only: [:new, :create, :destroy]
     resources :users, only: [:new, :create, :show]
 
