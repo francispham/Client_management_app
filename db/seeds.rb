@@ -14,7 +14,6 @@ super_user = User.create(
   is_admin: true
 )
 
-
 User.create([
     {
     first_name: "Rose",
@@ -29,8 +28,6 @@ User.create([
     password: PASSWORD
   }
 ])
-
-
 
 puts "Login as admin with #{super_user.email} and password of '#{PASSWORD}'"
 
@@ -65,8 +62,6 @@ AdminUser.create!([
   {email: 'js@winterfell.gov', password: PASSWORD, password_confirmation: PASSWORD},
   {email: 'michelle@stmedispa.com', password: PASSWORD, password_confirmation: PASSWORD}
   ])
-
-
 
 
 
