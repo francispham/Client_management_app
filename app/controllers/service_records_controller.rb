@@ -33,7 +33,7 @@ end
 
 private
 def service_record_params
-  params.require(:service_record).permit(:treatment, :start,
+  params.require(:service_record).permit(:treatment, :start, :date,
                                         :end, :observations, :esthetician)
 end
 
