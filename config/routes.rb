@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     resources :health_histories, only: [:create, :destory, :new, :show]
   end
 
-  resources :services, shallow: true do
-    resources :service_records, only: [:create, :destory, :new, :show]
+  resources :services, shallow: true, only:[] do
+    resources :service_records
   end
 
   get('/', { to: 'welcome#index', as: :root })

@@ -1,6 +1,6 @@
 class ServiceRecordsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_service_record, except: [:new, :index, :create]
+  before_action :find_service_record, except: [:new, :index, :create, :show]
   before_action :authorize_user!, only: [:destroy]
 
 def create
@@ -22,7 +22,7 @@ def new
 end
 
 def show
-  @service = Service.find_by(id: @service_record.service_id)
+  @service ||= Service.find params[:id]
   @client = Client.find_by(id: @service.client_id)
 end
 
