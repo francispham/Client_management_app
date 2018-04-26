@@ -42,6 +42,7 @@ gem 'devise'
 gem 'activeadmin'
 gem 'rails_12factor'
 gem 'webpacker'
+gem 'cocoon'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

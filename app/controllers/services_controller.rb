@@ -20,6 +20,9 @@ class ServicesController < ApplicationController
     @service = Service.new
   end
 
+  def edit
+  end
+
   def show
     @client = Client.find_by(id: @service.client_id)
     @service_records = ServiceRecord.where(service_id: @service.id)
@@ -30,6 +33,13 @@ class ServicesController < ApplicationController
     @services = Service.where(client_id: @client.id)
   end
 
+  def update
+    if @service.update service_params
+      redirect_to service_path(@service)
+    else
+      render :edit
+    end
+  end
 
   def destroy
     @service.destroy

@@ -8,11 +8,11 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
 
   resources :clients, shallow: true do
-    resources :services, only: [:new, :create, :destoy, :show, :index]
+    resources :services
     resources :health_histories, only: [:create, :destory, :new, :show]
   end
 
-  resources :services, shallow: true, only:[] do
+  resources :services, shallow: true do
     resources :service_records, only: [:create, :destory, :new, :show]
   end
 

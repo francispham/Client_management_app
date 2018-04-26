@@ -1,0 +1,7 @@
+<%= simple_form_for @service do |f| %>
+  <%= f.input :title %>
+  <%= f.input :session %>
+  <%= f.input :detail %>
+  <%= f.input :note %>
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>

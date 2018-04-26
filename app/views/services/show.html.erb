@@ -10,6 +10,21 @@
     <strong>Created at:</strong> <%= @service.created_at %></p>
   </small>
 </div>
+<div class="actionInfor">
+  <% if can?(:update, @service) %>
+  <%= link_to 'Edit', edit_service_path(@service) %>
+  <% end %>
+
+  <% if can?(:destroy, @service) %>
+  <%= link_to 'Delete',
+    service_path(@service),
+    method: :delete,
+    data: {
+      confirm: 'Are you sure?'
+    }
+  %>
+  <% end %>
+</div>
 ===============================<br>
 ||<%= link_to 'Add Treatments', new_service_service_record_path(@service)%>||
 <br>===============================
