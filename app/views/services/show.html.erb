@@ -10,12 +10,27 @@
     <strong>Created at:</strong> <%= @service.created_at %></p>
   </small>
 </div>
+<div class="actionInfor">
+  <% if can?(:update, @service) %>
+  <%= link_to 'Edit', edit_service_path(@service) %>
+  <% end %>
+
+  <% if can?(:destroy, @service) %>
+  <%= link_to 'Delete',
+    service_path(@service),
+    method: :delete,
+    data: {
+      confirm: 'Are you sure?'
+    }
+  %>
+  <% end %>
+</div>
 ===============================<br>
 ||<%= link_to 'Add Treatments', new_service_service_record_path(@service)%>||
 <br>===============================
 <div class="service-records">
   <h3>Service Records</h3>
-  <% @service_records.each do |sr| %>
-  <p><strong>Created At:</strong> <%= link_to time_ago_in_words(sr.created_at), service_record_path(@service)  %></p>
+  <% @service_records.each do |service_record| %>
+  <p><strong>Date of Treatment:</strong> <%= link_to service_record.date, service_service_record_path(@service, service_record)%></p>
   <% end %>
 </div>

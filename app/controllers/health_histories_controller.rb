@@ -1,15 +1,19 @@
 class HealthHistoriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_health_history, :authorize_user!, only: [:destroy]
+  before_action :find_health_history, except: [:new, :index, :create]
+  before_action :authorize_user!, only: [:destroy]
 
   def create
     @client = Client.find params[:client_id]
     @health_history = HealthHistory.new health_history_params
     @health_history.client = @client
-    if @health_history.save
-      redirect_to client_path(@client)
-    else
+    if @health_history
+      flash[:alert] = 'Health History already exist!'
       @health_histories = @client.health_histories.order(created_at: :desc)
+      render 'health_histories/show'
+    elsif @health_history.save
+      redirect_to health_history_path(@client, @health_history)
+    else
       render 'clients/show'
     end
   end
@@ -19,7 +23,6 @@ class HealthHistoriesController < ApplicationController
   end
 
   def show
-    # byebug
     @client = Client.find params[:id]
     @health_histories = HealthHistory.where(client_id: @client.id)
   end
@@ -27,6 +30,17 @@ class HealthHistoriesController < ApplicationController
   def destroy
     @health_history.destroy
     redirect_to client_path(@health_history.client)
+  end
+
+  def edit
+  end
+
+  def update
+    if @health_history.update health_history_params
+      redirect_to health_history_path(@health_history)
+    else
+      render :edit
+    end
   end
 
   private

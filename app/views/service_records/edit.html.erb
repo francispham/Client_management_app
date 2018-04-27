@@ -1,6 +1,6 @@
-<h2>Service Record</h2>
-<%= simple_form_for @service_record,
-    url: service_service_records_path do |f| %>
+<h2>Edit Service Record</h2>
+<%= simple_form_for [@service_record],
+    url: service_service_record_path do |f| %>
   <%= f.input :date %>
   <%= f.input :treatment %>
   <%= f.input :start %>

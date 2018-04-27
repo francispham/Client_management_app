@@ -10,7 +10,7 @@ class ServicesController < ApplicationController
     @service.user = current_user
 
     if @service.save
-      redirect_to client_path(@client)
+      redirect_to service_path(@service)
     else
       render :file => 'public/404.html', :status => :not_found, :layout => false
     end
@@ -30,6 +30,16 @@ class ServicesController < ApplicationController
     @services = Service.where(client_id: @client.id)
   end
 
+  def edit
+  end
+
+  def update
+    if @service.update service_params
+      redirect_to service_path(@service)
+    else
+      render :edit
+    end
+  end
 
   def destroy
     @service.destroy
