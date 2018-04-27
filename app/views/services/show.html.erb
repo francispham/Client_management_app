@@ -30,7 +30,7 @@
 <br>===============================
 <div class="service-records">
   <h3>Service Records</h3>
-  <% @service_records.each do |sr| %>
-  <p><strong>Date of Treatment:</strong> <%= link_to sr.date %></p>
+  <% @service_records.each do |service_record| %>
+  <p><strong>Date of Treatment:</strong> <%= link_to service_record.date, service_service_record_path(@service, service_record)%></p>
   <% end %>
 </div>
