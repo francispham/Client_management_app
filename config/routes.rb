@@ -8,13 +8,14 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
 
   resources :clients, shallow: true do
-    resources :services
+    resources :services, only: [:new, :create, :destroy, :show, :update, :index, :edit]
     resources :health_histories, only: [:create, :destory, :new, :show]
   end
 
-  resources :services, shallow: true, only:[] do
-    resources :service_records
+  resources :services, only: [:show] do
+    resources :service_records, only: [:new, :create, :destroy, :show, :update, :edit]
   end
+
 
   get('/', { to: 'welcome#index', as: :root })
 
