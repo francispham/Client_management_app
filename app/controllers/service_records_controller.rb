@@ -41,8 +41,9 @@ def update
 end
 
 def destroy
+
   @service_record.destroy
-  service_service_record_path(@service, @service_record)
+  redirect_to service_path(@service_record.service)
 end
 
 private

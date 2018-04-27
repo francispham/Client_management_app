@@ -20,9 +20,6 @@ class ServicesController < ApplicationController
     @service = Service.new
   end
 
-  def edit
-  end
-
   def show
     @client = Client.find_by(id: @service.client_id)
     @service_records = ServiceRecord.where(service_id: @service.id)
@@ -31,6 +28,9 @@ class ServicesController < ApplicationController
   def index
     @client = Client.find params[:client_id]
     @services = Service.where(client_id: @client.id)
+  end
+
+  def edit
   end
 
   def update

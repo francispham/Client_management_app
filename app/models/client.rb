@@ -1,7 +1,7 @@
 class Client < ApplicationRecord
   belongs_to :user
 
-  has_one :health_history, dependent: :destroy
+  has_many :health_histories, dependent: :destroy
 
   has_many :categorizings, dependent: :destroy
   has_many :categories, through: :categorizings
