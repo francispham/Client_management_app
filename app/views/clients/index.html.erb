@@ -4,10 +4,16 @@
   </button>
   <% @clients.each.with_index do |client, index| %>
     <li type="button" class="list-group-item list-group-item-action list-group-item-light">
-      <strong>
-        <%= index + 1 %> ⎯
-        <%= link_to client.first_name, client_path(client) %>
-      </strong>
+      <div class="row">
+        <div class="col">
+          <%= index + 1 %> ⎯ <strong>First Name:</strong>
+          <%= link_to client.first_name, client_path(client) %>
+        </div>
+        <div class="col">
+          <strong>Last Name:</strong>
+          <%= link_to client.last_name, client_path(client) %>
+        </div>
+      </div>
     </li>
   <% end %>
 </div>
