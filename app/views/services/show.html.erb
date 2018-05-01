@@ -1,40 +1,45 @@
-<div class="service">
-  <h4><%= @service.title %></h4>
-  =============================
-  <p>
-    <strong>Client:</strong>
-    <%= @client.first_name %></p>
-  <p>
-    <strong>Number of Sessions:</strong>
-    <%= @service.session %></p>
-  <p>
-    <strong>Service Detail:</strong>
-    <%= @service.detail %></p>
-  <p>
-    <strong>Note:</strong>
-    <%= @service.note %></p>
-  <small>
-    <p>
-      <strong>By:</strong>
-      <%= @service.user&.first_name %>*
-      <strong>Created at:</strong>
-      <%= @service.created_at %></p>
-  </small>
-</div>
-<div class="actionInfor">
-  <% if can?(:update, @service) %>
-    <%= link_to 'Edit', edit_service_path(@service) %>
-  <% end %>
+<div class="card">
+  <div class="card-header">
+    <%= @service.title %>
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">
+      <strong>Client:</strong>
+      <%= @client.first_name %>
+    </h3>
+    <p class="card-text">
+      <strong>Number of Sessions:</strong>
+      <%= @service.session %>
+    </p>
+    <p class="card-text">
+      <strong>Service Detail:</strong>
+      <%= @service.detail %>
+    </p>
+    <p class="card-text">
+      <strong>Note:</strong>
+      <%= @service.note %>
+    </p>
+    <p class="card-text">
+      <small>
+        <strong>By:</strong>
+        <%= @service.user&.first_name %>*
+        <strong>Created at:</strong>
+        <%= @service.created_at %>
+      </small>
+    </p>
 
-  <% if can?(:destroy, @service) %>
-    <%= link_to 'Delete', service_path(@service), method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-</div>
-===============================<br>
-||<%= link_to 'Add Treatments', new_service_service_record_path(@service)%>||
-<br>===============================
-<div class="service-records">
+    <div class="actionInfor">
+      <% if can?(:update, @service) %>
+      <%= link_to 'Edit', edit_service_path(@service), class: "btn btn-primary" %>
+      <% end %>
 
+      <% if can?(:destroy, @service) %>
+      <%= link_to 'Delete', service_path(@service), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>
 <div class="list-group">
   <button type="button" class="list-group-item list-group-item-primary active">
     Dates of Treatment
@@ -42,9 +47,15 @@
   <% @service_records.each.with_index do |service_record, index| %>
     <li type="button" class="list-group-item list-group-item-action list-group-item-light">
       <strong>
-        Treatment <%= index + 1 %> ⎯
+        Treatment
+        <%= index + 1 %>
+        ⎯
         <%= link_to service_record.date, service_service_record_path(@service, service_record) %>
       </strong>
     </li>
   <% end %>
+</div>
+<br>
+<div class="action">
+  <%= link_to 'Add Treatments', new_service_service_record_path(@service), class: "btn btn-primary"%>
 </div>
