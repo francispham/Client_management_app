@@ -1,6 +1,6 @@
 class HealthHistoriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_health_history, except: [:new, :index, :create]
+  before_action :find_health_history, except: [:new, :create]
   before_action :authorize_user!, only: [:destroy]
 
   def create
@@ -8,7 +8,7 @@ class HealthHistoriesController < ApplicationController
     @health_history = HealthHistory.new health_history_params
     @health_history.client = @client
     if @health_history.save
-      redirect_to health_history_path(@client, @health_history)
+      redirect_to health_history_path(@health_history)
     else
       render 'clients/show'
     end
@@ -16,17 +16,15 @@ class HealthHistoriesController < ApplicationController
 
   def new
     @client = Client.find params[:client_id]
-    @health_history ||= HealthHistory.where(client_id: @client.id)
-    if @health_history
-      redirect_to health_history_path(@client, @health_history)
-    else
-      @health_history = HealthHistory.new
+    if @client.health_histories != []
+      redirect_to client_path(@client)
+      flash[:alert] = 'Health History Already Exited!'
+    else @health_history = HealthHistory.new
     end
   end
 
   def show
-    @client = Client.find params[:id]
-    @health_histories = HealthHistory.where(client_id: @client.id)
+    @client = Client.find_by(id: @health_history.client_id)
   end
 
   def destroy

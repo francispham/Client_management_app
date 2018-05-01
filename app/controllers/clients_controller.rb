@@ -9,6 +9,7 @@ class ClientsController < ApplicationController
   end
 
   def show
+    @health_histories = @client.health_histories.order(created_at: :desc)
   end
 
   def new
