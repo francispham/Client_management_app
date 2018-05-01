@@ -5,7 +5,7 @@
   <% @services.each.with_index do |service, index| %>
     <li type="button" class="list-group-item list-group-item-action list-group-item-light">
       <strong>
-        <%= index + 1 %> ⎯⎯
+        <%= index + 1 %> ⎯
         <%= link_to service.title, service_path(service) %>
       </strong>
     </li>
