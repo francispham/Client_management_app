@@ -3,11 +3,11 @@
     <%= @client.first_name%>'s Service List
   </button>
   <% @services.each.with_index do |service, index| %>
-    <button type="button" class="list-group-item list-group-item-action list-group-item-light">
+    <li type="button" class="list-group-item list-group-item-action list-group-item-light">
       <strong>
         <%= index + 1 %> ⎯⎯
         <%= link_to service.title, service_path(service) %>
       </strong>
-    </button>
+    </li>
   <% end %>
 </div>

@@ -40,11 +40,11 @@
     Dates of Treatment
   </button>
   <% @service_records.each.with_index do |service_record, index| %>
-    <button type="button" class="list-group-item list-group-item-action list-group-item-light">
+    <li type="button" class="list-group-item list-group-item-action list-group-item-light">
       <strong>
         Treatment <%= index + 1 %> ⎯⎯
         <%= link_to service_record.date, service_service_record_path(@service, service_record) %>
       </strong>
-    </button>
+    </li>
   <% end %>
 </div>
