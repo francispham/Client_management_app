@@ -3,3 +3,23 @@
 */
 @import "font-awesome";
 @import "bootstrap";
+body {
+  background-color: white;
+}
+
+
+.flash-message {
+  padding: 8px;
+  color: darkolivegreen;
+  background-color: palegreen;
+  border-radius: 5px;
+}
+
+.has-error .help-block {
+  color: red;
+}
+
+.ShowPage{
+  border-radius: 5px;
+  border: 1px
+}

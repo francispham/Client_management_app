@@ -5,7 +5,7 @@ class ClientsController < ApplicationController
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
-    @clients = Client.all.order(created_at: :desc)
+    @clients = Client.order('first_name ASC')
   end
 
   def show
