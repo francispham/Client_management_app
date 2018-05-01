@@ -1,5 +1,13 @@
-<% @services.each do |service| %>
-  <div class="service-list-item">
-    <%= link_to service.title, service_path(service) %>
-  </div>
-<% end %>
+<div class="list-group">
+  <button type="button" class="list-group-item list-group-item-primary active">
+    <%= @client.first_name%>'s Service List
+  </button>
+  <% @services.each.with_index do |service, index| %>
+    <button type="button" class="list-group-item list-group-item-action list-group-item-light">
+      <strong>
+        <%= index + 1 %> ⎯⎯
+        <%= link_to service.title, service_path(service) %>
+      </strong>
+    </button>
+  <% end %>
+</div>

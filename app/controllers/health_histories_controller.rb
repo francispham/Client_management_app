@@ -7,11 +7,7 @@ class HealthHistoriesController < ApplicationController
     @client = Client.find params[:client_id]
     @health_history = HealthHistory.new health_history_params
     @health_history.client = @client
-    if @health_history
-      flash[:alert] = 'Health History already exist!'
-      @health_histories = @client.health_histories.order(created_at: :desc)
-      render 'health_histories/show'
-    elsif @health_history.save
+    if @health_history.save
       redirect_to health_history_path(@client, @health_history)
     else
       render 'clients/show'
@@ -19,7 +15,13 @@ class HealthHistoriesController < ApplicationController
   end
 
   def new
-    @health_history = HealthHistory.new
+    @client = Client.find params[:client_id]
+    @health_history ||= HealthHistory.where(client_id: @client.id)
+    if @health_history
+      redirect_to health_history_path(@client, @health_history)
+    else
+      @health_history = HealthHistory.new
+    end
   end
 
   def show

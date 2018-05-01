@@ -36,8 +36,10 @@
     <p><strong>Related to Menstrual Cycle:</strong> <%= hs.acne_menstrual_cycle? %></p>
  <% end %>
 </div>
+
 <div class="actionInfor">
+  ||<%= link_to 'Back To Service', client_path(@client)%>||
   <% if can?(:update, @health_history) %>
-  <%= link_to 'Edit', edit_health_history_path(@health_history) %>
+  <%= link_to 'Edit', edit_health_history_path(@client, @health_history) %>
   <% end %>
 </div>

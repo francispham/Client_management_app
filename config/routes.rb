@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :clients, shallow: true do
     resources :services, only: [:new, :create, :destroy, :show, :update, :index, :edit]
-    resources :health_histories, only: [:create, :destory, :new, :show, :edit, :update]
+    resources :health_histories, only: [:new, :create, :destroy, :show, :update, :edit]
   end
 
   resources :services, only: [:show] do
