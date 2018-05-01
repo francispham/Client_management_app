@@ -1,48 +1,110 @@
 <div class="histories-list">
-  <h2>Health History</h2>
+  <div class="card-body">
+    <h2 class="card-title">Health History</h2>
+  </div>
+  <h5 class="card-title">
     <strong>Medical History:</strong>
     <% @health_history.medical_histories.order(:name).each do |mh| %>
-      <span class="badge badge-pill badge-primary">
+      <span class="badge badge-warning">
         <%= mh.name %>
       </span>
     <% end %>
-    <p><strong>Botox Used:</strong> <%= @health_history.had_botox %></p>
-    <p><strong>Tatoos or Permanent Makeup:</strong> <%= @health_history.had_tatoos %></p>
-    <p><strong>Treated by an Endocrinologist:</strong> <%= @health_history.had_endocrinologiest %></p>
-    <p><strong>Had Gold Therapy:</strong> <%= @health_history.had_gold_therapy %></p>
-==========================================
-    <p><strong>Sun Exposure/ Tanning Habits: </strong> </p>
-    <p><strong>Use of Sunscreen:</strong> <%= @health_history.sunscreen %></p>
-    <p><strong>SPF#:</strong> <%= @health_history.spf %></p>
-    <p>
-      <strong>Sunbatthe for tanning:</strong> <%= @health_history.sunbathe %>*
-      <strong>With in 6 Weeks:</strong> <%= @health_history.sunbathe_sixweek %>
-    </p>
-    <p>
-      <strong>Frequently tanning beds:</strong> <%= @health_history.tanning_bed %>*
-      <strong>With in 6 Weeks:</strong> <%= @health_history.tanning_sixweek %>
-    </p>
-    <p><strong>Ethics:</strong> <%= @health_history.ethic %></p>
+  </h5>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <strong>Botox Used:</strong>
+      <%= @health_history.had_botox %>
+    </li>
+    <li class="list-group-item">
+      <strong>Tatoos or Permanent Makeup:</strong>
+      <%= @health_history.had_tatoos %>
+    </li>
+    <li class="list-group-item">
+      <strong>Treated by an Endocrinologist:</strong>
+      <%= @health_history.had_endocrinologiest %>
+    </li>
+    <li class="list-group-item">
+      <strong>Had Gold Therapy:</strong>
+      <%= @health_history.had_gold_therapy %>
+    </li>
+  </ul>
+</br>
+  <h5 class="card-title">
+    <strong>
+      Sun Exposure/ Tanning Habits:
+    </strong>
+  </h5>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <strong>Use of Sunscreen:</strong>
+      <%= @health_history.sunscreen %>
+    </li>
+    <li class="list-group-item">
+      <strong>SPF#:</strong>
+      <%= @health_history.spf %>
+    </li>
+    <li class="list-group-item">
+      <strong>Sunbatthe for tanning:</strong>
+      <%= @health_history.sunbathe %>*
+      <strong>With in 6 Weeks:</strong>
+      <%= @health_history.sunbathe_sixweek %>
+    </li>
+    <li class="list-group-item">
+      <strong>Frequently tanning beds:</strong>
+      <%= @health_history.tanning_bed %>*
+      <strong>With in 6 Weeks:</strong>
+      <%= @health_history.tanning_sixweek %>
+    </li>
+    <li class="list-group-item">
+      <strong>Ethics:</strong>
+      <%= @health_history.ethic %>
+    </li>
+  </ul>
+</br>
+  <h5 class="card-title">
+    <strong>
+      For Women Only -Check any that currently apply
+    </strong>
+  </h5>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <strong>Pregnancy:</strong>
+      <%= @health_history.pregnant %>
+    </li>
+    <li class="list-group-item">
+      <strong>Expecting Pregnancy:</strong>
+      <%= @health_history.becoming_pregnant %>
+    </li>
+    <li class="list-group-item">
+      <strong>Nursing Until:</strong>
+      <%= @health_history.nursing_until %>
+    </li>
+    <li class="list-group-item">
+      <strong>Use of Birth Control:</strong>
+      <%= @health_history.birth_control %>
+    </li>
+    <li class="list-group-item">
+      <strong>Menopausal:</strong>
+      <%= @health_history.menopausal %>
+    </li>
+    <li class="list-group-item">
+      <strong>Using Method Replacement Therapy:</strong>
+      <%= @health_history.hormone_replacement %>
+    </li>
+    <li class="list-group-item">
+      <strong>Related to Menstrual Cycle:</strong>
+      <%= @health_history.acne_menstrual_cycle %>
+    </li>
+  </ul>
 
-==========================================
-    <p><strong>For Women Only -Check any that currently apply </strong> </p>
-    <p><strong>Pregnancy:</strong> <%= @health_history.pregnant %></p>
-    <p><strong>Expecting Pregnancy:</strong> <%= @health_history.becoming_pregnant %></p>
-    <p><strong>Nursing Until:</strong> <%= @health_history.nursing_until %></p>
-    <p><strong>Use of Birth Control:</strong> <%= @health_history.birth_control %></p>
-    <p><strong>Menopausal:</strong> <%= @health_history.menopausal %></p>
-    <p><strong>Using Method Replacement Therapy:</strong> <%= @health_history.hormone_replacement %></p>
-    <p><strong>Related to Menstrual Cycle:</strong> <%= @health_history.acne_menstrual_cycle %></p>
-</div>
-
-<div class="actionInfor">
-  ||<%= link_to 'Back To Service', client_path(@client)%>||
+<div class="actionInfor card-body">
+  <%= link_to 'Back To Client', client_path(@client), class: "card-link"%>
   <% if can?(:update, @health_history) %>
-  <%= link_to 'Edit', edit_health_history_path(@health_history) %>
-  <% end %>||
-  <% if can?(:destroy, @client) %>
-  <%= link_to 'Delete', health_history_path(@health_history), method: :delete,
-  data: { confirm: 'Are you sure?'}%>
+    <%= link_to 'Edit', edit_health_history_path(@health_history), class: "card-link" %>
   <% end %>
-
+  <% if can?(:destroy, @client) %>
+    <%= link_to 'Delete', health_history_path(@health_history),
+    method: :delete, data: { confirm: 'Are you sure?'}, class: "card-link" %>
+  <% end %>
+</div>
 </div>
