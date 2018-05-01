@@ -58,7 +58,7 @@
     <%= link_to 'New Services', new_client_service_path(@client) %>
     <% end %>
     ||<% if can?(:new, @health_history) %>
-    <%= link_to 'Health History', new_client_health_history_path(@client) %>
+    <%= link_to 'New Health History', new_client_health_history_path(@client) %>
     <% end %>
   </div>
   ==============================
@@ -66,12 +66,12 @@
   <div class="view">
     <strong>Viewing:</strong>
     ||<%= link_to 'Services', client_services_path(@client)%>||
-    <%= link_to 'Health History', health_history_path(@client)%>||
+    <% @health_histories.each do |health_history| %>
+    <%= link_to "Health History", health_history_path(health_history) %>
+    <% end %>||
   </div>
-  ==============================
 </div>
-
-
+==============================
 
 
 
