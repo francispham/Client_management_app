@@ -1,17 +1,18 @@
-<div class="service-record">
-  <div class="info">
+<div class="service-record card">
+  <div class="card-header">
     <h4><%= @client.first_name %>'s Record</h4>
-    =============================
-    <p><strong>Date:</strong> <%= @service_record.date %></p>
-    <p><strong>Service:</strong> <%= @service.title %></p>
-    <p><strong>Treatment:</strong> <%= @service_record.treatment %></p>
-    <p><strong>Duration:</strong> <%= ((@service_record.end - @service_record.start) / 1.hour).round(2) %><strong>hr</strong> </p>
-    <p><strong>Observations:</strong> <%= @service_record.observations %></p>
-    <p><strong>Esthetician:</strong> <%= @service_record.esthetician %></p>
   </div>
+  <div class="card-body">
+    <h3 class="card-title"><strong>Service:</strong> <%= @service.title %></h3>
+    <p class="card-text"><strong>Date:</strong> <%= @service_record.date %></p>
+    <p class="card-text"><strong>Treatment:</strong> <%= @service_record.treatment %></p>
+    <p class="card-text"><strong>Duration:</strong> <%= ((@service_record.end - @service_record.start) / 1.hour).round(2) %><strong>hr</strong> </p>
+    <p class="card-text"><strong>Observations:</strong> <%= @service_record.observations %></p>
+    <p class="card-text"><strong>Esthetician:</strong> <%= @service_record.esthetician %></p>
   <div class="actionInfor">
     <% if can?(:update, @service_record) %>
-    <%= link_to 'Edit', edit_service_service_record_path(@service, @service_record) %>
+    <%= link_to 'Edit', edit_service_service_record_path(@service, @service_record),
+    class: "btn btn-primary" %>
     <% end %>
 
     <% if can?(:destroy, @service_record) %>
@@ -20,11 +21,15 @@
       method: :delete,
       data: {
         confirm: 'Are you sure?'
-      }
+      }, class: "btn btn-primary"
     %>
     <% end %>
   </div>
-  =============================<br>
-  ||<%= link_to 'Back To Service', service_path(@service)%>||
-  ||<%= link_to 'Add New Service Record', new_service_service_record_path(@service, @service_record)%>||
+</div>
+</div>
+<br>
+<div class="action">
+  <%= link_to 'Back To Service', service_path(@service), class: "btn btn-primary"%>
+  <%= link_to 'Add New Service Record',
+  new_service_service_record_path(@service, @service_record), class: "btn btn-primary"%>
 </div>
