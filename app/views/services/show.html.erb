@@ -1,36 +1,50 @@
 <div class="service">
   <h4><%= @service.title %></h4>
   =============================
-  <p><strong>Client:</strong> <%= @client.first_name %></p>
-  <p><strong>Number of Sessions:</strong> <%= @service.session %></p>
-  <p><strong>Service Detail:</strong> <%= @service.detail %></p>
-  <p><strong>Note:</strong> <%= @service.note %></p>
+  <p>
+    <strong>Client:</strong>
+    <%= @client.first_name %></p>
+  <p>
+    <strong>Number of Sessions:</strong>
+    <%= @service.session %></p>
+  <p>
+    <strong>Service Detail:</strong>
+    <%= @service.detail %></p>
+  <p>
+    <strong>Note:</strong>
+    <%= @service.note %></p>
   <small>
-    <p><strong>By:</strong> <%= @service.user&.first_name %>*
-    <strong>Created at:</strong> <%= @service.created_at %></p>
+    <p>
+      <strong>By:</strong>
+      <%= @service.user&.first_name %>*
+      <strong>Created at:</strong>
+      <%= @service.created_at %></p>
   </small>
 </div>
 <div class="actionInfor">
   <% if can?(:update, @service) %>
-  <%= link_to 'Edit', edit_service_path(@service) %>
+    <%= link_to 'Edit', edit_service_path(@service) %>
   <% end %>
 
   <% if can?(:destroy, @service) %>
-  <%= link_to 'Delete',
-    service_path(@service),
-    method: :delete,
-    data: {
-      confirm: 'Are you sure?'
-    }
-  %>
+    <%= link_to 'Delete', service_path(@service), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 </div>
 ===============================<br>
 ||<%= link_to 'Add Treatments', new_service_service_record_path(@service)%>||
 <br>===============================
 <div class="service-records">
-  <h3>Service Records</h3>
-  <% @service_records.each do |service_record| %>
-  <p><strong>Date of Treatment:</strong> <%= link_to service_record.date, service_service_record_path(@service, service_record)%></p>
+
+<div class="list-group">
+  <button type="button" class="list-group-item list-group-item-primary active">
+    Dates of Treatment
+  </button>
+  <% @service_records.each.with_index do |service_record, index| %>
+    <button type="button" class="list-group-item list-group-item-action list-group-item-light">
+      <strong>
+        Treatment <%= index + 1 %> ⎯⎯
+        <%= link_to service_record.date, service_service_record_path(@service, service_record) %>
+      </strong>
+    </button>
   <% end %>
 </div>

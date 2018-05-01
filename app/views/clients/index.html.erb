@@ -1,5 +1,13 @@
-<% @clients.each do |client| %>
-  <div class="client-list-item">
-    <%= link_to client.first_name, client_path(client) %>
-  </div>
-<% end %>
+<div class="list-group">
+  <button type="button" class="list-group-item list-group-item-primary active">
+    Client List
+  </button>
+  <% @clients.each.with_index do |client, index| %>
+    <button type="button" class="list-group-item list-group-item-action list-group-item-light">
+      <strong>
+        <%= index + 1 %> ⎯⎯
+        <%= link_to client.first_name, client_path(client) %>
+      </strong>
+    </button>
+  <% end %>
+</div>
