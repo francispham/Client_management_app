@@ -7,4 +7,11 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+import {qS} from "../src/dom";
+
 console.log('Hello World from Webpacker')
+
+document.addEventListener("DOMContentLoaded", () =>{
+  const welcomeTitle = document.querySelector(".welcome-title");
+  welcomeTitle.style.color = "DarkBlue";
+})
