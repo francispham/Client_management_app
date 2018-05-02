@@ -5,3 +5,4 @@ function qS(query, node = document) {
 function qSA(query, node = document) {
   return node.querySelectorAll(query);
 }
+export {qS, qSA};
