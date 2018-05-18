@@ -6,7 +6,8 @@ function UserTable(props) {
   // console.log(props);
   return (
     <div className="UserTable">
-      <Alert>What's up?</Alert>
+      <Alert>Welcome, Admin</Alert>
+      <h3>Admin Dashboard</h3>
       <Table striped={true}>
         <thead>
           <tr>
