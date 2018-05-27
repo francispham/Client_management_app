@@ -1,19 +1,45 @@
 <%= simple_form_for @client do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
-  <%= f.input :phone_number %>
-  <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
-                              end_year: Date.today.year - 12, discard_day: true,
-                              order: [:month, :year] %>
-  <%= f.input :age, collection: 11..90 %>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= f.input :first_name, placeholder: 'First Name', label:false %>
+    </div>
+    <div class="col">
+      <%= f.input :last_name, placeholder: 'Last Name', label:false %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= f.input :email, placeholder: 'Email', label:false%>
+    </div>
+    <div class="col">
+      <%= f.input :phone_number, placeholder: 'Phone Number', label:false %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= f.input :address, placeholder: 'Address', label:false %>
+    </div>
+    <div class="col">
+      <%= f.input :postal_code, placeholder: 'Postal Code', label:false %>
+    </div>
+  </div>
   <%= f.input :gender, as: :radio_buttons, collection: [['Female', 'female'], ['Male', 'male']], label_method: :second, value_method: :first %>
-  <%= f.input :address %>
-  <%= f.input :postal_code %>
+  <div class="row">
+    <div class="col">
+      <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
+      end_year: Date.today.year - 12, discard_day: true,
+      order: [:month, :year] %>      </div>
+      <div class="col">
+        <%= f.input :age, collection: 11..90 %>
+      </div>
+    </div>
+
 ================================
   <div class="tag">
       <%= f.association :categories, input_html: { class: 'chosen-select' }, label: 'I am interested in' %>
   </div>
 
   <%= f.submit 'Submit', class: 'btn btn-primary' %>
+</div>
 <% end %>
