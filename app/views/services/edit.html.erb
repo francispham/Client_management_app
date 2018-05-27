@@ -1,7 +1,16 @@
-<%= simple_form_for @service do |f| %>
-  <%= f.input :title %>
-  <%= f.input :session %>
+<div class="form container">
+  <h2>Edit Service</h2>
+  <%= simple_form_for @service do |f| %>
+  <div class="row">
+    <div class="col">
+      <%= f.input :title %>
+    </div>
+    <div class="col">
+      <%= f.input :session %>
+    </div>
+  </div>
   <%= f.input :detail %>
   <%= f.input :note %>
   <%= f.submit 'Submit', class: 'btn btn-primary' %>
-<% end %>
+  <% end %>
+</div>
