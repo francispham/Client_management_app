@@ -12,7 +12,7 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light container-fluid">
         <%= link_to image_tag( "logo.png", style: "height: 40px; "), root_path,
         class: "navbar-brand" %>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -64,8 +64,9 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+    </div>
         <% end %>
-        <div class="container">
+        <div class="container-fluid">
           <%= yield %>
         </div>
       </body>
