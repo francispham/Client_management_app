@@ -42,6 +42,7 @@ gem 'devise'
 gem 'activeadmin'
 gem 'rails_12factor'
 gem 'webpacker'
+gem 'react-rails'
 gem 'cocoon'
 
 # Use Capistrano for deployment

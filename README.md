@@ -1,24 +1,21 @@
-# README
+# Client Management Project for StMedi Spa
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Run the following commands in your terminal, after cloning the repo:
 
-Things you may want to cover:
+```
+> cd Client_management_app
+> bundle
+> rails db:create
+> rails db:migrate
+> rails db:seed
+> rails start
+```
 
-* Ruby version
+## Built With
 
-* System dependencies
+* Ruby on Rails
+* React.js
+* PostgresQL
+* Bootstrap
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Author: Francis Pham
