@@ -1,8 +1,7 @@
-<h3>Admin Dashboard</h3>
 
+<!--
 <table class="table table-striped">
   <thead class="thead-dark">
-
     <tr>
       <th>First Name</th>
       <th>Last Name</th>
@@ -24,3 +23,18 @@
     <% end %>
   </tbody>
 </table>
+-->
+
+<!--
+To render react components from the app/javascript/components directory with
+react-rails, user the 'react_component' helper method. It takes the name of the
+component's file as its first argument as a string (w/o the file extension.)
+Also, the component's file must export the component with "export default". <thead>
+second argument is hash or an object that can be converted to json with the
+ .to_json. React-rails with convert that hash to json and pass it as props to
+ the component you are rendering. -->
+
+<!-- <%= react_component("UserTable", Client.all)%> -->
+<%= react_component("UserTable", {users: @users,
+  currentUser: current_user.as_json(except: [:password_digest])
+  })%>
