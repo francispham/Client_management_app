@@ -6,11 +6,13 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+
   </head>
 
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light container-fluid">
         <%= link_to image_tag( "logo.png", style: "height: 40px; "), root_path,
         class: "navbar-brand" %>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -39,15 +41,14 @@
             </li>
             <li class="nav-item">
               <%= link_to 'Sign Out', session_path, method: :delete, class: "nav-link" %>
-            <% else %>
+              <% else %>
               <%= link_to 'Sign In', new_session_path, class: "nav-link" %>
             <% end %>
           </li>
         </ul>
       </div>
     </nav>
-
-    <hr/>
+    <br>
     <div class="container-fluid">
       <% if flash[:notice].present? %>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -63,8 +64,10 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+    </div>
         <% end %>
-
-        <%= yield %>
+        <div class="container-fluid">
+          <%= yield %>
+        </div>
       </body>
     </html>

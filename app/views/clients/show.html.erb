@@ -5,27 +5,38 @@
       <h3 class="card-title">
         <%= @client.first_name.capitalize %>
       </h3>
-      <p class="card-text">
-        <strong>Email:</strong>
-        <%= @client.email %></p>
-      <p class="card-text">
-        <strong>Phone Number:</strong>
-        <%= @client.phone_number.round %></p>
-      <p class="card-text">
-        <strong>Date of Birth:</strong>
-        <%= @client.date_of_birth %></p>
-      <p class="card-text">
-        <strong>Age:</strong>
-        <%= @client.age %></p>
-      <p class="card-text">
-        <strong>Gender:</strong>
-        <%= @client.gender %></p>
-      <p class="card-text">
-        <strong>Address:</strong>
-        <%= @client.address %></p>
-      <p class="card-text">
-        <strong>Postal Code:</strong>
-        <%= @client.postal_code %></p>
+      <div class="row">
+        <div class="col">
+          <strong>Gender:</strong><%= @client.gender %></p>
+        </div>
+        <div class="col">
+          <strong>Age:</strong><%= @client.age %></p>
+        </div>
+        <div class="col">
+          <strong>Date of Birth:</strong><%= @client.date_of_birth %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <strong>Email:</strong><%= @client.email %>
+        </div>
+        <div class="col">
+            <strong>Phone Number:</strong><%= @client.phone_number.round %>
+        </div>
+        <div class="col"></div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col">
+          <strong>Address:</strong><%= @client.address %></p>
+        </div>
+        <div class="col">
+            <strong>Postal Code:</strong><%= @client.postal_code %></p>
+        </div>
+        <div class="col"></div>
+      </div>
+
       <h5 class="card-title">Consultation Interested:</h5>
       <p class="card-text">
         <% @client.categories.order(:name).each do |category| %>
@@ -52,6 +63,16 @@
           <%= @client.user&.first_name || '[DELETED]' %>
         </small>
       </p>
+
+      <div class="action health-history">
+        <% @health_histories.each do |health_history| %>
+          <%= link_to "Health History", health_history_path(health_history)%>
+        <% end %>
+          <%if can?(:new, @health_history) %>
+          <%= link_to 'New Health History', new_client_health_history_path(@client)%>
+          <% end %>
+      </div>
+      <br/>
       <div class="actionInfor">
         <% if can?(:update, @client) %>
           <%= link_to 'Edit', edit_client_path(@client), class: "btn btn-primary" %>
@@ -63,22 +84,29 @@
     </div>
   </div>
 </br>
-<div class="action">
-  <strong>Adding:</strong>
-  ||<% if can?(:new, @client) %>
-    <%= link_to 'New Services', new_client_service_path(@client) %>
-  <% end %>
-  ||<% if can?(:new, @health_history) %>
-    <%= link_to 'New Health History', new_client_health_history_path(@client) %>
-  <% end %>
-  ||<% @health_histories.each do |health_history| %>
-    <%= link_to "Health History", health_history_path(health_history) %>
-  <% end %>||
-</div>
 ===============================================================
 <div class="view">
   <strong>Viewing:</strong>
   ||<%= link_to 'Services', client_services_path(@client)%>
+=======
+
+<div class="list-group">
+  <button type="button" class="list-group-item list-group-item-dark">
+    <strong>Service List</strong>
+  </button>
+  <% @services.each.with_index do |service, index| %>
+    <li type="button" class="list-group-item list-group-item-light">
+      <strong>
+        <%= index + 1 %> ⎯
+        <%= link_to service.title, service_path(service) %>
+      </strong>
+    </li>
+  <% end %>
 </div>
+<br />
+  <% if can?(:new, @client) %>
+    <%= link_to 'New Services', new_client_service_path(@client), class: "btn btn-primary" %>
+  <% end %>
+<br />
 
 <!-- -->
