@@ -5,7 +5,7 @@
   <div class="card-body">
     <h3 class="card-title">
       <strong>Client:</strong>
-      <%= @client.first_name %>
+      <%= @client.first_name%>
     </h3>
     <p class="card-text">
       <strong>Number of Sessions:</strong>
@@ -29,6 +29,7 @@
     </p>
 
     <div class="actionInfor">
+      <%= link_to 'Back To Client', client_path(@client), class: "btn btn-primary" %>
       <% if can?(:update, @service) %>
       <%= link_to 'Edit', edit_service_path(@service), class: "btn btn-primary" %>
       <% end %>
@@ -36,6 +37,7 @@
       <% if can?(:destroy, @service) %>
       <%= link_to 'Delete', service_path(@service), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
       <% end %>
+
     </div>
   </div>
 </div>

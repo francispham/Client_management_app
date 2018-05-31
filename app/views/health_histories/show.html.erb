@@ -28,7 +28,7 @@
       <%= @health_history.had_gold_therapy %>
     </li>
   </ul>
-</br>
+<br/>
   <h5 class="card-title">
     <strong>
       Sun Exposure/ Tanning Habits:
@@ -60,10 +60,30 @@
       <%= @health_history.ethic %>
     </li>
   </ul>
-</br>
+<br/>
   <h5 class="card-title">
     <strong>
-      For Women Only -Check any that currently apply
+      Laser Hair Treatments:
+    </strong>
+  </h5>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <strong>Facial or Body areas to be treated:</strong>
+      <%= @health_history.laser_areas %>
+    </li>
+    <li class="list-group-item">
+      <strong>Hair color to be treated:</strong>
+      <%= @health_history.color_hair %>
+    </li>
+    <li class="list-group-item">
+      <strong>Method used within the last 3 weeks:</strong>
+      <%= @health_history.treated_area %>
+    </li>
+  </ul>
+<br/>
+  <h5 class="card-title">
+    <strong>
+      For Women Only:
     </strong>
   </h5>
   <ul class="list-group list-group-flush">

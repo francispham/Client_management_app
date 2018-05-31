@@ -49,8 +49,8 @@ class HealthHistoriesController < ApplicationController
       :had_tatoos, :had_endocrinologiest, :had_gold_therapy, :sunscreen,
       :spf, :sunbathe, :sunbathe_sixweek, :tanning_bed, :tanning_sixweek,
       :ethic, :pregnant, :becoming_pregnant, :nursing_until, :menopausal,
-      :hormone_replacement, :acne_menstrual_cycle, :birth_control,
-      medical_history_ids: []
+      :hormone_replacement, :acne_menstrual_cycle, :birth_control, :laser_areas,
+      :color_hair, :treated_area, medical_history_ids: []
     )
   end
 

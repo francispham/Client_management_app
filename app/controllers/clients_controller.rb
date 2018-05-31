@@ -9,6 +9,7 @@ class ClientsController < ApplicationController
   end
 
   def show
+    @services = Service.where(client_id: @client.id)
     @health_histories = @client.health_histories.order(created_at: :desc)
   end
 
