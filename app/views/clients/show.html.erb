@@ -63,22 +63,33 @@
     </div>
   </div>
 </br>
+
+<div class="list-group">
+  <button type="button" class="list-group-item list-group-item-primary active">
+    <%= @client.first_name%>'s Service List
+  </button>
+  <% @services.each.with_index do |service, index| %>
+    <li type="button" class="list-group-item list-group-item-action list-group-item-light">
+      <strong>
+        <%= index + 1 %> ⎯
+        <%= link_to service.title, service_path(service) %>
+      </strong>
+    </li>
+  <% end %>
+</div>
+<br />
 <div class="action">
   <strong>Adding:</strong>
-  ||<% if can?(:new, @client) %>
-    <%= link_to 'New Services', new_client_service_path(@client) %>
+  <% if can?(:new, @client) %>
+    <%= link_to 'New Services', new_client_service_path(@client), class: "btn btn-primary" %>
   <% end %>
-  ||<% if can?(:new, @health_history) %>
-    <%= link_to 'New Health History', new_client_health_history_path(@client) %>
+  <% if can?(:new, @health_history) %>
+    <%= link_to 'New Health History', new_client_health_history_path(@client), class: "btn btn-primary" %>
   <% end %>
-  ||<% @health_histories.each do |health_history| %>
+  <% @health_histories.each do |health_history| %>
     <%= link_to "Health History", health_history_path(health_history) %>
-  <% end %>||
+  <% end %>
 </div>
-===============================================================
-<div class="view">
-  <strong>Viewing:</strong>
-  ||<%= link_to 'Services', client_services_path(@client)%>
-</div>
+<br />
 
 <!-- -->
