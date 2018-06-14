@@ -10,14 +10,14 @@ import {
 import HomePage from "./HomePage";
 
 class App extends Component {
-  return (
-    <Router basename="/client">
+  render() {
+    return (
+      <Router basename="/client">
       <div className="App">
         <Route exact path="/" component={HomePage} />
       </div>
     </Router>
-    );
-  }
+  )}
 }
 
 export default App;

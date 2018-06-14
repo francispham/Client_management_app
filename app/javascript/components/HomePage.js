@@ -7,7 +7,7 @@ class HomePage extends Component {
         className="HomePage"
         style={{margin: '0 1rem'}}
       >
-        <h1>Welcome to StMedi Spa</h1>
+        <h1>Welcome to StMedi Spa Home Page</h1>
       </main>
     )
   }
