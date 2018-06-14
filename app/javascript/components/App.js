@@ -12,7 +12,7 @@ import HomePage from "./HomePage";
 class App extends Component {
   render() {
     return (
-      <Router basename="/client">
+      <Router basename="/">
       <div className="App">
         <Route exact path="/" component={HomePage} />
       </div>
