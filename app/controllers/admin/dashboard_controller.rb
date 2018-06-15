@@ -8,7 +8,6 @@ class Admin::DashboardController < ApplicationController
 
   private
   def authorize_admin!
-    # unless can?(:manage, :all)
     unless can?(:manage, :all)
       flash[:alert] = "Access Denied!"
       redirect_to root_path
