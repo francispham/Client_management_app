@@ -6,6 +6,7 @@ import {
   Route,
   Switch
 } from "react-router-dom";
+import { NavBar } from "./NavBar";
 
 import HomePage from "./HomePage";
 
@@ -14,6 +15,8 @@ class App extends Component {
     return (
       <Router basename="/">
       <div className="App">
+        <NavBar/>
+
         <Switch>
           <Route exact path="/" component={HomePage} />
         </Switch>

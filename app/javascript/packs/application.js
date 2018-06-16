@@ -12,8 +12,6 @@ import React from "react";
 import {qS, qSA} from "../src/dom";
 import UserTable from "../components/UserTable";
 
-console.log('This is /app')
-
 document.addEventListener("DOMContentLoaded", () =>{
   const welcomeTitle = document.querySelector(".welcome-title");
   welcomeTitle.style.color = "DarkBlue";
