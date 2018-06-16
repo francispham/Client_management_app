@@ -1,16 +1,18 @@
 import React from "react";
+import { NavLink as RRNavLink } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
+  NavLink,
   Nav,
   NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem } from 'reactstrap';
+
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -32,12 +34,12 @@ class NavBar extends React.Component {
     return (
       <div>
            <Navbar color="light" light expand="md">
-             <NavbarBrand href="/">ST Medi Spa LOGO</NavbarBrand>
+             <NavbarBrand activeClassName="active" tag={RRNavLink} to="/">ST Medi Spa LOGO</NavbarBrand>
              <NavbarToggler onClick={this.toggle} />
              <Collapse isOpen={this.state.isOpen} navbar>
                <Nav className="ml-auto" navbar>
                  <NavItem>
-                   <NavLink href="/HOME">HOME</NavLink>
+                   <NavLink activeClassName="active" tag={RRNavLink} to="/">HOME</NavLink>
                  </NavItem>
                  <UncontrolledDropdown nav inNavbar>
                    <DropdownToggle nav caret>
@@ -57,13 +59,13 @@ class NavBar extends React.Component {
                    </DropdownMenu>
                  </UncontrolledDropdown>
                  <NavItem>
-                   <NavLink href="/Promotions">PROMOTIONS</NavLink>
+                   <NavLink activeClassName="active" tag={RRNavLink} to="/Promotions">PROMOTIONS</NavLink>
                  </NavItem>
                  <NavItem>
-                   <NavLink href="/About/">ABOUT</NavLink>
+                   <NavLink activeClassName="active" tag={RRNavLink} to="/About/">ABOUT</NavLink>
                  </NavItem>
                  <NavItem>
-                   <NavLink href="/FindUs/">FIND US</NavLink>
+                   <NavLink activeClassName="active" tag={RRNavLink} to="/FindUs/">FIND US</NavLink>
                  </NavItem>
                </Nav>
              </Collapse>

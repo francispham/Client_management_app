@@ -6,9 +6,10 @@ import {
   Route,
   Switch
 } from "react-router-dom";
-import { NavBar } from "./NavBar";
 
+import { NavBar } from "./NavBar";
 import HomePage from "./HomePage";
+import { NotFoundPage } from "./NotFoundPage";
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route component={NotFoundPage} />
         </Switch>
       </div>
     </Router>
