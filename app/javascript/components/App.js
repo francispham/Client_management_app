@@ -9,6 +9,7 @@ import {
 
 import { NavBar } from "./NavBar";
 import HomePage from "./HomePage";
+import { About } from "./About";
 import { NotFoundPage } from "./NotFoundPage";
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route component={About} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>

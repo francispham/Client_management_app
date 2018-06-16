@@ -47,10 +47,16 @@ class NavBar extends React.Component {
                    </DropdownToggle>
                    <DropdownMenu right>
                      <DropdownItem>
-                       FACIAL
+                       MEDICAL FACIALS & EXFOLIATIONS
                      </DropdownItem>
                      <DropdownItem>
-                       SKINCARE
+                       IPL TREATMENT
+                     </DropdownItem>
+                     <DropdownItem>
+                       PERMANENT LASER HAIR REMOVAL
+                     </DropdownItem>
+                     <DropdownItem>
+                       SKIN REJUVENATION
                      </DropdownItem>
                      <DropdownItem divider />
                      <DropdownItem>

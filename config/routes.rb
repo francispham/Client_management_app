@@ -20,11 +20,10 @@ Rails.application.routes.draw do
 
   get('/app', { to: 'welcome#index', as: :root })
 
-  match "/", to: 'landing#index', via: :all
-  # match "/*path", to: "landing#index", via: :all
-
   namespace :admin do
     resources :dashboard, only: [:index]
   end
 
+  match "/", to: 'landing#index', via: :all
+  get "/*path", to: "landing#index", except: [:root, :dashboard]
 end
