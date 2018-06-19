@@ -24,6 +24,6 @@ Rails.application.routes.draw do
     resources :dashboard, only: [:index]
   end
 
-  get "/", to: 'landing#index', via: :all
-  get "/*path", to: "landing#index", except: [:root, :dashboard]
+  match "/", to: 'landing#index', via: :all
+  match "/*path", to: "landing#index", via: :all
 end
