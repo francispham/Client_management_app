@@ -41,7 +41,7 @@ class NavBar extends React.Component {
              <Collapse isOpen={this.state.isOpen} navbar>
                <Nav className="ml-auto" navbar>
                  <NavItem>
-                   <NavLink activeClassName="active" tag={RRNavLink} to="/">HOME</NavLink>
+                   <NavLink activeClassName="active" tag={RRNavLink} to="/About/">ABOUT US</NavLink>
                  </NavItem>
                  <UncontrolledDropdown nav inNavbar>
                    <DropdownToggle nav caret>
@@ -67,10 +67,7 @@ class NavBar extends React.Component {
                    </DropdownMenu>
                  </UncontrolledDropdown>
                  <NavItem>
-                   <NavLink activeClassName="active" tag={RRNavLink} to="/Promotions">PROMOTIONS</NavLink>
-                 </NavItem>
-                 <NavItem>
-                   <NavLink activeClassName="active" tag={RRNavLink} to="/About/">ABOUT</NavLink>
+                   <NavLink activeClassName="active" tag={RRNavLink} to="/News">LASTEST NEWS</NavLink>
                  </NavItem>
                  <NavItem>
                    <NavLink activeClassName="active" tag={RRNavLink} to="/FindUs/">FIND US</NavLink>

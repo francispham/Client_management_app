@@ -10,6 +10,7 @@ import {
 import { NavBar } from "./NavBar";
 import HomePage from "./HomePage";
 import { About } from "./About";
+import { FindUs } from "./FindUs";
 import { NotFoundPage } from "./NotFoundPage";
 import { Footer } from "./Footer";
 
@@ -23,6 +24,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/About" component={About} />
+          <Route exact path="/FindUs" component={FindUs} />
           <Route component={NotFoundPage} />
         </Switch>
 
