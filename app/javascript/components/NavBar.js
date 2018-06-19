@@ -34,7 +34,9 @@ class NavBar extends React.Component {
     return (
       <div>
            <Navbar color="light" light expand="md">
-             <NavbarBrand activeClassName="active" tag={RRNavLink} to="/">ST Medi Spa LOGO</NavbarBrand>
+             <NavbarBrand activeClassName="active" tag={RRNavLink} to="/">
+                <img src={require('../../assets/images/logo.png')} style={{height: "40px"}} />
+             </NavbarBrand>
              <NavbarToggler onClick={this.toggle} />
              <Collapse isOpen={this.state.isOpen} navbar>
                <Nav className="ml-auto" navbar>
