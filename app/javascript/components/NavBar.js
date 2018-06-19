@@ -35,7 +35,7 @@ class NavBar extends React.Component {
       <div>
            <Navbar color="light" light expand="md">
              <NavbarBrand activeClassName="active" tag={RRNavLink} to="/">
-                <img src={require('../../assets/images/logo.png')} style={{height: "40px"}} />
+                <img src={require('../../assets/images/logo.png')} style={{height: "50px"}} />
              </NavbarBrand>
              <NavbarToggler onClick={this.toggle} />
              <Collapse isOpen={this.state.isOpen} navbar>
