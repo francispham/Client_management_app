@@ -5,19 +5,20 @@ class Footer extends Component {
   render() {
     return (
       <main className="Footer container-fluid" style={{
-        height: "40vh"
+        height: "50vh"
       }}>
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-between" style={{
+          height: "50%"}}>
           <div className="">
-            <img src={require('../../assets/images/logo.png')} style={{
-                height: "90px"
+            <img src={require('../../assets/images/LogoHorizantal.png')} style={{
+                height: "30px"
               }}/>
           </div>
-          <ul className="Social d-flex justify-content-between">
-            <div><FontAwesomeIcon icon={['fab', 'facebook']}/></div>
+          <div className="Social d-flex justify-content-between">
+            <div className=""><FontAwesomeIcon icon={['fab', 'facebook']}/></div>
             <div><FontAwesomeIcon icon={['fab', 'instagram']}/></div>
             <div><FontAwesomeIcon icon={['fab', 'google']}/></div>
-          </ul>
+          </div>
           <div className="">
             <div>STMedi@STMedi.com</div>
           </div>
