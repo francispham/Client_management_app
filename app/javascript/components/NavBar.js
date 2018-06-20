@@ -33,7 +33,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <div>
-           <Navbar color="light" light expand="md">
+           <Navbar className="fixed-top" color="faded" light expand="md">
              <NavbarBrand activeClassName="active" tag={RRNavLink} to="/">
                 <img src={require('../../assets/images/logo.png')} style={{height: "50px"}} />
              </NavbarBrand>

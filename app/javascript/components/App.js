@@ -20,6 +20,8 @@ import brands from '@fortawesome/fontawesome-free-brands';
 import faCheckSquare from '@fortawesome/fontawesome-free-solid/faCheckSquare';
 import faCoffee from '@fortawesome/fontawesome-free-solid/faCoffee';
 
+fontawesome.library.add(brands, faCheckSquare, faCoffee)
+
 class App extends Component {
   render() {
     return (
