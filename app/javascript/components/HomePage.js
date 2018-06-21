@@ -9,6 +9,7 @@ const HomePage = (props) => {
         <h1 className="display-4">Welcome to ST Medi Spa</h1>
         <p><Button size="lg" style={{opacity:".3", borderRadius:"0"}}>Learn More</Button></p>
       </Jumbotron>
+      
     </div>
   );
 };

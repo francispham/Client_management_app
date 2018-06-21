@@ -1,38 +1,43 @@
 import React, {Component} from "react";
+import { Container, Row, Col } from 'reactstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 class Footer extends Component {
+
   render() {
     return (
       <main className="Footer" style={{
         height: "100vh"
       }}>
         <div className="middle flex-column" style={{ height: "25%" }}>
-          <h3>920 Seymour Street, Vancouver BC</h3>
-          <h3>V6B 3L9 Canada</h3>
+          <h4>920 Seymour Street, Vancouver BC</h4>
+          <h4>V6B 3L9 Canada</h4>
         </div>
 
-        <div className="container-fluid" style={{ height: "25%" }}>
-          <div className="row middle">
-            <div className="HorLogo col middle">
+        <div className="container-fluid">
+          <Row className="">
+            <Col className="HorLogo middle">
               <img src={require('../../assets/images/LogoHorizantal.png')} style={{
                 width: "35vh"
               }}/>
-            </div>
+            </Col>
 
-            <div className="Social col display-4 middle color">
-                <FontAwesomeIcon icon={['fab', 'facebook']} pull="left"/>
-                <FontAwesomeIcon icon={['fab', 'instagram']} pull="left"/>
-                <FontAwesomeIcon icon={['fab', 'google']} pull="left"/>
-            </div>
-            <div>
-            </div>
+            <Col className="Social display-4 middle color">
+                <FontAwesomeIcon icon={['fab', 'facebook']} pull="right"/>
+                <FontAwesomeIcon icon={['fab', 'instagram']} pull="right"/>
+                <FontAwesomeIcon icon={['fab', 'google']} pull="right"/>
+            </Col>
 
-            <div className="col middle">
-              <FontAwesomeIcon icon='envelope' pull="left" className="Mail color"/>
+            <Col className= "middle">
+              <FontAwesomeIcon icon='envelope' pull="right" className="Mail color"/>
               STMedi@STMedi.com
-            </div>
-          </div>
+            </Col>
+          </Row>
+        </div>
+        <div className="middle" style={{paddingTop:"40px"}}>
+          <h4>
+            © 2018  |  PRIVACY POLICY
+          </h4>
         </div>
 
         <div className="display-4 middle flex-column" style={{ height: "50%" }}>
@@ -45,7 +50,7 @@ class Footer extends Component {
         </div>
     </main>)
   }
-}
+};
 
 export {
   Footer
