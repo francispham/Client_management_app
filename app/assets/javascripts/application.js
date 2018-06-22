@@ -17,3 +17,8 @@
 //= require bootstrap
 //= require rails-ujs
 //= require_tree .
+
+
+$(window).scroll(function(){
+	$('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+});

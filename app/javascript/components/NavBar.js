@@ -33,15 +33,15 @@ class NavBar extends React.Component {
   render() {
     return (
       <div>
-           <Navbar className="fixed-top" color="faded" light expand="md">
+           <Navbar className="fixed-top navbar-default" light expand="md">
              <NavbarBrand activeClassName="active" tag={RRNavLink} to="/">
-                <img src={require('../../assets/images/logo.png')} style={{height: "50px"}} />
+                <img src={require('../../assets/images/logo.png')} style={{height: "70px"}} />
              </NavbarBrand>
              <NavbarToggler onClick={this.toggle} />
              <Collapse isOpen={this.state.isOpen} navbar>
                <Nav className="ml-auto" navbar>
                  <NavItem>
-                   <NavLink activeClassName="active" tag={RRNavLink} to="/About/">ABOUT US</NavLink>
+                   <NavLink activeClassName="active" tag={RRNavLink} to="/">HOME</NavLink>
                  </NavItem>
                  <UncontrolledDropdown nav inNavbar>
                    <DropdownToggle nav caret>
@@ -68,6 +68,9 @@ class NavBar extends React.Component {
                  </UncontrolledDropdown>
                  <NavItem>
                    <NavLink activeClassName="active" tag={RRNavLink} to="/News">LASTEST NEWS</NavLink>
+                 </NavItem>
+                 <NavItem>
+                   <NavLink activeClassName="active" tag={RRNavLink} to="/About/">ABOUT US</NavLink>
                  </NavItem>
                  <NavItem>
                    <NavLink activeClassName="active" tag={RRNavLink} to="/FindUs/">FIND US</NavLink>
