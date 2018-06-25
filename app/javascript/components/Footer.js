@@ -6,8 +6,9 @@ class Footer extends Component {
 
   render() {
     return (
-      <main className="Footer" style={{
-        height: "100vh"
+      <div className="Footer" style={{
+        height: "100vh",
+        paddingTop: "40px"
       }}>
         <div className="middle flex-column" style={{ height: "25%" }}>
           <h4>920 Seymour Street, Vancouver BC</h4>
@@ -48,7 +49,7 @@ class Footer extends Component {
           </div>
 
         </div>
-    </main>)
+    </div>)
   }
 };
 
