@@ -1,8 +1,16 @@
-<div class="list-group">
-  <button type="button" class="list-group-item list-group-item-primary active">
-    Client List
-  </button>
-  <% @clients.each.with_index do |client, index| %>
+<div class="Clients">
+  <div class="jumbotron">
+    <h1 class="display-4 welcome-title">STmedi Spa </h1>
+    <p class="lead">The Client Management App</p>
+    <hr class="my-4">
+    <p>This web app is for internal users only</p>
+  </div>
+
+  <div class="list-group">
+    <button type="button" class="list-group-item list-group-item-primary active">
+      Client List
+    </button>
+    <% @clients.each.with_index do |client, index| %>
     <li type="button" class="list-group-item list-group-item-action list-group-item-light">
       <div class="row">
         <div class="col">
@@ -15,5 +23,6 @@
         </div>
       </div>
     </li>
-  <% end %>
+    <% end %>
+  </div>
 </div>

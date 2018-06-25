@@ -5,6 +5,7 @@
 @import "bootstrap";
 body {
   background-color: white;
+  min-height:200vh;
 }
 
 
@@ -32,4 +33,29 @@ body {
 }
 .grid {
   display: grid
+}
+
+.color {
+  color: #BB972E;
+}
+.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.navbar-default{
+  transition:500ms ease;
+  background:transparent;
+}
+.navbar-default.scrolled{
+  background: #F7F8F9;
+}
+
+.Footer {
+  background: #F7F8F9;
+}
+
+.HomePage {
+  margin-bottom: 0px;
 }

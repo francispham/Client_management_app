@@ -18,10 +18,12 @@ Rails.application.routes.draw do
   end
 
 
-  get('/', { to: 'welcome#index', as: :root })
+  get('/app', { to: 'welcome#index', as: :root })
 
   namespace :admin do
     resources :dashboard, only: [:index]
   end
 
+  match "/", to: 'landing#index', via: :all
+  match "/*path", to: "landing#index", via: :all
 end
