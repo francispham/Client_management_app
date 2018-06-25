@@ -11,14 +11,14 @@
 // about supported directives.
 //
 //= require jquery3
+//= require jquery
+//= require jquery_ujs
 //= require cocoon
 //= require chosen-jquery
 //= require popper
 //= require bootstrap
 //= require rails-ujs
 //= require_tree .
-
-
 $(window).scroll(function(){
 	$('nav').toggleClass('scrolled', $(this).scrollTop() > 30);
 });
