@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {Jumbotron, Button} from 'reactstrap';
 import {Container, Row, Col} from 'reactstrap';
 
@@ -135,6 +136,7 @@ class HomePage extends React.Component {
         </Container>
       </section>
     </div>);
+
   };
 
 }

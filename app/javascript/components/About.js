@@ -4,8 +4,10 @@ import { NavLink } from 'reactstrap';
 class About extends Component {
   render () {
     return (
+
       <main className="About">
         <h3 className="display-3">About St Medi Spa</h3>
+
         <p>
           ST MEDI SPA is a new special medical style skin and teeth care center
           serving men and women interested in maintaining their overall healthy
