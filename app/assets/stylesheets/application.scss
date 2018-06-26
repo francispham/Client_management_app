@@ -5,11 +5,16 @@
 @import "bootstrap";
 body {
   background-color: white;
-  min-height:200vh;
+  min-height:150vh;
 }
 
 section {
   height: auto;
+}
+
+main {
+  padding-top: 6em;
+  display: grid;
 }
 
 .flash-message {

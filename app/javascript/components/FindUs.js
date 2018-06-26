@@ -1,19 +1,48 @@
 import React, { Component } from "react";
 import { NavLink } from 'reactstrap';
+import {Container, Row, Col} from 'reactstrap';
 
 class FindUs extends Component {
   render () {
     return (
-      <main className="FindUs" style={{height: "40vh"}}>
-        <div>
-          <h2>Find Us</h2>
-          <div>
-            <h4>Hours</h4>
-            <h4>Contact Information</h4>
-            <h4>Social Media</h4>
-            <h4>Location</h4>
-          </div>
-        </div>
+      <main className="FindUs">
+          <h3 className="display-3">Find Us</h3>
+        <section className="container-fluid">
+          <Container id="FindUs" style={{
+              paddingTop: "1em"
+            }}>
+            <Row>
+              <Col style={{
+                  padding: "0px"
+                }} sm={6} md={3}>
+                <div id="fade">
+                  <strong>Hours</strong>
+                </div>
+              </Col>
+              <Col style={{
+                  padding: "0px"
+                }} sm={6} md={3}>
+                <div id="fade">
+                  <strong>Contact Information</strong>
+                </div>
+              </Col>
+              <Col style={{
+                  padding: "0px"
+                }} sm={6} md={3}>
+                <div id="fade">
+                  <strong>Social Media</strong>
+                </div>
+              </Col>
+              <Col style={{
+                  padding: "0px"
+                }} sm={6} md={3}>
+                <div id="fade">
+                  <strong>Location</strong>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
       </main>
     )
   }
