@@ -1,5 +1,7 @@
 import React from 'react';
-import { Jumbotron, Button } from 'reactstrap';
+import {Jumbotron, Button} from 'reactstrap';
+import {Container, Row, Col} from 'reactstrap';
+
 import Landing from '../../assets/images/Landing1.jpg'
 
 const jumStyle = {
@@ -9,50 +11,130 @@ const jumStyle = {
 
 class HomePage extends React.Component {
   render() {
-    return (
-      <div>
-        <Jumbotron className="d-flex flex-column justify-content-center align-items-center HomePage" fluid style={ jumStyle }>
-          <p className="lead"><img src={require('../../assets/images/logo.png')} style={{height:"50vh"}} />
-</p>
-          {/* <h1 className="display-1">Welcome to ST Medi Spa</h1> */}
-          <p><Button size="lg" style={{opacity:".3", borderRadius:"0"}}>Learn More</Button></p>
-        </Jumbotron>
+    return (<div>
+      <Jumbotron className="d-flex flex-column justify-content-center align-items-center HomePage" fluid="fluid" style={jumStyle}>
+        <p className="lead">
+          <img src={require('../../assets/images/logo.png')} style={{
+              height: "50vh"
+            }}/>
+        </p>
+        <p>
+          <Button size="lg" style={{
+              opacity: ".3",
+              borderRadius: "0"
+            }}>Learn More</Button>
+        </p>
+      </Jumbotron>
 
-        <section className="container-fluid">
-          <h1 className="middle display-2" style={{ paddingTop: "1em" }}>SERVICES</h1>
-          <section>
-            <h1>SKIN CARE</h1>
-          </section>
-          <section>
-            <h1>LASER HAIR REMOVAL</h1>
-          </section>
-          <section>
-            <h1>MANICURE</h1>
-          </section>
-          <section>
-            <h1>ORAGNIC TEETH WHITENING</h1>
-          </section>
+      <Jumbotron className="d-flex flex-column justify-content-center align-items-center" fluid="fluid">
+        <p className="lead">
+          <h1 className="display-2">Welcome to ST Medi Spa</h1>
+        </p>
+        <div className="container-fluid">
+          <Container id="about" style={{
+              paddingTop: "1em"
+            }}>
+            <Row>
+              <Col style={{
+                  padding: "0px"
+                }} sm={12} md={6}>
+                <div id="fade">
+                  <strong>SKIN CARE</strong>
+                </div>
+              </Col>
+              <Col style={{
+                  padding: "0px"
+                }} sm={12} md={6}>
+                <div id="fade">
+                  <strong>LASER HAIR REMOVAL</strong>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+        <p>
+          <Button size="lg" style={{
+              opacity: ".3",
+              borderRadius: "0"
+            }}>Learn More</Button>
+        </p>
+      </Jumbotron>
 
-        </section>
+      <section className="container-fluid">
+        <Container id="services" style={{
+            paddingTop: "1em"
+          }}>
+          <Row>
+            <Col style={{
+                padding: "0px"
+              }} sm={6} md={3}>
+              <div id="fade">
+                <strong>SKIN CARE</strong>
+              </div>
+            </Col>
+            <Col style={{
+                padding: "0px"
+              }} sm={6} md={3}>
+              <div id="fade">
+                <strong>LASER HAIR REMOVAL</strong>
+              </div>
+            </Col>
+            <Col style={{
+                padding: "0px"
+              }} sm={6} md={3}>
+              <div id="fade">
+                <strong>MANICURE</strong>
+              </div>
+            </Col>
+            <Col style={{
+                padding: "0px"
+              }} sm={6} md={3}>
+              <div id="fade">
+                <strong>ORAGNIC TEETH WHITENING</strong>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
 
-        <section className="container-fluid">
-          <h1 className="middle display-2">CONTENT</h1>
-          <section>
-            <h1>NEW SERVICES</h1>
-          </section>
-          <section>
-            <h1>USEFUL INFO</h1>
-          </section>
-          <section>
-            <h1>WHO WE ARE</h1>
-          </section>
-          <section>
-            <h1>NEWS & EVENT</h1>
-          </section>
-        </section>
-
-      </div>
-    );
+      <section className="container-fluid">
+        <Container id="content" style={{
+            paddingTop: "1em"
+          }}>
+          <Row>
+            <Col style={{
+                padding: "0px"
+              }} sm={6} md={3}>
+              <div id="fade">
+                <strong>NEW SERVICES
+                </strong>
+              </div>
+            </Col>
+            <Col style={{
+                padding: "0px"
+              }} sm={6} md={3}>
+              <div id="fade">
+                <strong>USEFUL INFO</strong>
+              </div>
+            </Col>
+            <Col style={{
+                padding: "0px"
+              }} sm={6} md={3}>
+              <div id="fade">
+                <strong>WHO WE ARE</strong>
+              </div>
+            </Col>
+            <Col style={{
+                padding: "0px"
+              }} sm={6} md={3}>
+              <div id="fade">
+                <strong>NEWS & EVENT</strong>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+    </div>);
   };
 
 }

@@ -8,6 +8,9 @@ body {
   min-height:200vh;
 }
 
+section {
+  height: auto;
+}
 
 .flash-message {
   padding: 8px;
@@ -58,4 +61,13 @@ body {
 
 .HomePage {
   margin-bottom: 0px;
+}
+
+#fade{
+  height: 30vh;
+  background-color: rgba(69, 65, 89,.2);
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
