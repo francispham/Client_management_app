@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import {
-  // When doing named imports, you can `as` to rename
-  // an import in context of a file. As shown, below:
   BrowserRouter as Router,
   Route,
   Switch

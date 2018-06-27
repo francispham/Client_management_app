@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'reactstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 class Footer extends Component {
-
   render() {
     return (
       <div className="Footer" style={{

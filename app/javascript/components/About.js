@@ -4,10 +4,10 @@ import { NavLink } from 'reactstrap';
 class About extends Component {
   render () {
     return (
-      <main className="About">
-        <h3 className="display-3">About St Medi Spa</h3>
+      <main className="About container-fluid">
+        <h3 className="display-3">About St MEDI</h3>
         <p>
-          ST MEDI SPA is a new special medical style skin and teeth care center
+          ST MEDI is a new special medical style skin and teeth care center
           serving men and women interested in maintaining their overall healthy
           look while also targeting the effects of aging. Our services focus on
           skin rejuvenation or photo facials, acne therapy, sunspot or hyperpigmentation,
@@ -22,7 +22,7 @@ class About extends Component {
         </p>
         <p><strong>Esthetician Expertise</strong></p>
         <p>
-          Your ST MEDI SPA esthetician will be your trusted partner to assist you
+          Your ST MEDI esthetician will be your trusted partner to assist you
           on your journey toward attaining confidence in your skin’s appearance.
           Our knowledgeable and trusted estheticians are experts in using our
           state-of-the-art technology and techniques. Our estheticians are all

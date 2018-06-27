@@ -6,8 +6,8 @@ class FindUs extends Component {
   render () {
     return (
       <main className="FindUs">
-          <h3 className="display-3">Find Us</h3>
         <section className="container-fluid">
+          <h3 className="display-3">Find Us</h3>
           <Container id="FindUs" style={{
               paddingTop: "1em"
             }}>

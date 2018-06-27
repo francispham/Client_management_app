@@ -3,7 +3,6 @@ import {Alert, Table} from "reactstrap";
 
 function UserTable(props) {
   const { users = [], currentUser } = props;
-  // console.log(props);
   return (
     <div className="UserTable">
       <Alert>Welcome, Admin</Alert>
