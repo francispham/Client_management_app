@@ -8,6 +8,7 @@ Run the following commands in your terminal, after cloning the repo:
 > rails db:create
 > rails db:migrate
 > rails db:seed
+> yarn install
 > rails start
 Please check seed file for login infor!
 ```
