@@ -28,7 +28,7 @@ class HomePage extends React.Component {
 
       <Jumbotron className="d-flex flex-column justify-content-center align-items-center" fluid>
         <p className="lead">
-          <span className="display-2">Welcome to ST MEDI</span>
+          <span className="display-2">Welcome to our ST Medi Spa</span>
         </p>
         <div className="container-fluid">
           <Container fluid id="about" style={{
