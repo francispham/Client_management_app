@@ -8,7 +8,7 @@ class FindUs extends Component {
       <main className="FindUs">
         <section className="container-fluid">
           <h3 className="display-3">Find Us</h3>
-          <Container id="FindUs" style={{
+          <Container fluid id="FindUs" style={{
               paddingTop: "1em"
             }}>
             <Row>

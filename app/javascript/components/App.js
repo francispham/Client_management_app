@@ -10,6 +10,10 @@ import HomePage from "./HomePage";
 import { About } from "./About";
 import { FindUs } from "./FindUs";
 import { NotFoundPage } from "./NotFoundPage";
+import { Skincare } from "./services/Skincare";
+import { Laser } from "./services/Laser";
+import { TeethCare } from "./services/TeethCare";
+import { LatestNews } from "./LatestNews";
 import { Footer } from "./Footer";
 
 import fontawesome from '@fortawesome/fontawesome';
@@ -30,6 +34,10 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route exact path="/Skincare" component={Skincare} />
+          <Route exact path="/LaserHairRemoval" component={Laser} />
+          <Route exact path="/OrganicTeethWhitening" component={TeethCare} />
+          <Route exact path="/LatestNews" component={LatestNews} />
           <Route exact path="/About" component={About} />
           <Route exact path="/FindUs" component={FindUs} />
           <Route component={NotFoundPage} />

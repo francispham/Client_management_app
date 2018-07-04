@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink as RRNavLink } from 'react-router-dom';
+import { NavLink as RRNavLink} from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -45,29 +45,24 @@ class NavBar extends React.Component {
                  </NavItem>
                  <UncontrolledDropdown nav inNavbar>
                    <DropdownToggle nav caret>
-                     SERVICES
+                       SERVICES
                    </DropdownToggle>
                    <DropdownMenu right>
                      <DropdownItem>
-                       MEDICAL FACIALS & EXFOLIATIONS
+                       <NavLink activeClassName="active" tag={RRNavLink} to="/Skincare">SKINCARE</NavLink>
                      </DropdownItem>
                      <DropdownItem>
-                       IPL TREATMENT
+                       <NavLink activeClassName="active" tag={RRNavLink} to="/LaserHairRemoval">PERMANENT LASER HAIR REMOVAL</NavLink>
                      </DropdownItem>
                      <DropdownItem>
-                       PERMANENT LASER HAIR REMOVAL
+                       <NavLink activeClassName="active" tag={RRNavLink} to="/OrganicTeethWhitening">ORGANIC TEETH WHITENING</NavLink>
                      </DropdownItem>
-                     <DropdownItem>
-                       SKIN REJUVENATION
-                     </DropdownItem>
-                     <DropdownItem divider />
-                     <DropdownItem>
-                       ORGANIC TEETH WHITENING
-                     </DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem>NEW SERVICES!!!</DropdownItem>
                    </DropdownMenu>
                  </UncontrolledDropdown>
                  <NavItem>
-                   <NavLink activeClassName="active" tag={RRNavLink} to="/News">LASTEST NEWS</NavLink>
+                   <NavLink activeClassName="active" tag={RRNavLink} to="/LatestNews">LASTEST NEWS</NavLink>
                  </NavItem>
                  <NavItem>
                    <NavLink activeClassName="active" tag={RRNavLink} to="/About/">ABOUT US</NavLink>

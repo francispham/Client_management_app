@@ -12,7 +12,7 @@ const jumStyle = {
 class HomePage extends React.Component {
   render() {
     return (<div>
-      <Jumbotron className="d-flex flex-column justify-content-center align-items-center HomePage" fluid="fluid" style={jumStyle}>
+      <Jumbotron className="d-flex flex-column justify-content-center align-items-center HomePage" fluid style={jumStyle}>
         <p className="lead">
           <img src={require('../../assets/images/logo.png')} style={{
               height: "50vh"
@@ -26,12 +26,12 @@ class HomePage extends React.Component {
         </p>
       </Jumbotron>
 
-      <Jumbotron className="d-flex flex-column justify-content-center align-items-center" fluid="fluid">
+      <Jumbotron className="d-flex flex-column justify-content-center align-items-center" fluid>
         <p className="lead">
-          <h1 className="display-2">Welcome to ST MEDI</h1>
+          <span className="display-2">Welcome to ST MEDI</span>
         </p>
         <div className="container-fluid">
-          <Container id="about" style={{
+          <Container fluid id="about" style={{
               paddingTop: "1em"
             }}>
             <Row>
@@ -60,8 +60,8 @@ class HomePage extends React.Component {
         </p>
       </Jumbotron>
 
-      <section className="container-fluid">
-        <Container id="services" style={{
+      <section>
+        <Container fluid id="services" style={{
             paddingTop: "1em"
           }}>
           <Row>
@@ -97,8 +97,8 @@ class HomePage extends React.Component {
         </Container>
       </section>
 
-      <section className="container-fluid">
-        <Container id="content" style={{
+      <section >
+        <Container fluid id="content" style={{
             paddingTop: "1em"
           }}>
           <Row>
