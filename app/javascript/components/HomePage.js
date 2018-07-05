@@ -26,7 +26,7 @@ class HomePage extends React.Component {
         </p>
       </Jumbotron>
 
-      <Jumbotron className="d-flex flex-column justify-content-center align-items-center" fluid>
+      <Jumbotron className="flex-column middle" fluid>
         <p className="lead">
           <span className="display-2">Welcome to our ST Medi Spa</span>
         </p>
@@ -39,14 +39,14 @@ class HomePage extends React.Component {
                   padding: "0px"
                 }} sm={12} md={6}>
                 <div id="fade">
-                  <strong>SKIN CARE</strong>
+                  <strong>CONTOURING & CELLULITE TREATMENT</strong>
                 </div>
               </Col>
               <Col style={{
                   padding: "0px"
                 }} sm={12} md={6}>
                 <div id="fade">
-                  <strong>LASER HAIR REMOVAL</strong>
+                  <strong>VOTIVA</strong>
                 </div>
               </Col>
             </Row>
@@ -83,16 +83,16 @@ class HomePage extends React.Component {
                 padding: "0px"
               }} sm={6} md={3}>
               <div id="fade">
-                <strong>MANICURE</strong>
-              </div>
-            </Col>
-            <Col style={{
-                padding: "0px"
-              }} sm={6} md={3}>
-              <div id="fade">
                 <strong>ORAGNIC TEETH WHITENING</strong>
               </div>
             </Col>
+            <Col style={{
+              padding: "0px"
+            }} sm={6} md={3}>
+            <div id="fade">
+              <strong>MANICURE</strong>
+            </div>
+          </Col>
           </Row>
         </Container>
       </section>
