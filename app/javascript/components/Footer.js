@@ -10,8 +10,8 @@ class Footer extends Component {
         paddingTop: "40px"
       }}>
         <div className="middle flex-column" style={{ height: "25%" }}>
-          <h4>920 Seymour Street, Vancouver BC</h4>
-          <h4>V6B 3L9 Canada</h4>
+          <h3>920 Seymour Street, Vancouver BC</h3>
+          <h3>V6B 3L9 Canada</h3>
         </div>
 
         <div className="container-fluid">
@@ -29,8 +29,8 @@ class Footer extends Component {
             </Col>
 
             <Col className= "middle">
-              <FontAwesomeIcon icon='envelope' pull="right" className="Mail color"/>
-              STMedi@STMedi.com
+              <FontAwesomeIcon icon='envelope' className="Mail color"/> &nbsp;
+                STMedi@STMedi.com
             </Col>
           </Row>
         </div>
