@@ -13,6 +13,7 @@ import { NotFoundPage } from "./NotFoundPage";
 import { Skincare } from "./services/Skincare";
 import { Laser } from "./services/Laser";
 import { TeethCare } from "./services/TeethCare";
+import { NewHot } from "./services/NewHot";
 import { LatestNews } from "./LatestNews";
 import { Footer } from "./Footer";
 
@@ -37,6 +38,7 @@ class App extends Component {
           <Route exact path="/Skincare" component={Skincare} />
           <Route exact path="/LaserHairRemoval" component={Laser} />
           <Route exact path="/OrganicTeethWhitening" component={TeethCare} />
+          <Route exact path="/NewAndHotServices" component={NewHot} />
           <Route exact path="/LatestNews" component={LatestNews} />
           <Route exact path="/About" component={About} />
           <Route exact path="/FindUs" component={FindUs} />

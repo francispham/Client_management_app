@@ -28,7 +28,7 @@ class HomePage extends React.Component {
 
       <Jumbotron className="flex-column middle" fluid>
         <p className="lead">
-          <span className="display-2">Welcome to our ST Medi Spa</span>
+          <span className="display-2">Welcome to our Spa</span>
         </p>
         <div className="container-fluid">
           <Container fluid id="about" style={{
@@ -83,7 +83,7 @@ class HomePage extends React.Component {
                 padding: "0px"
               }} sm={6} md={3}>
               <div id="fade">
-                <strong>ORAGNIC TEETH WHITENING</strong>
+                <strong>ORGANIC TEETH WHITENING</strong>
               </div>
             </Col>
             <Col style={{

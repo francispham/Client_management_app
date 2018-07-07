@@ -58,7 +58,9 @@ class NavBar extends React.Component {
                        <NavLink activeClassName="active" tag={RRNavLink} to="/OrganicTeethWhitening">ORGANIC TEETH WHITENING</NavLink>
                      </DropdownItem>
                     <DropdownItem divider />
-                    <DropdownItem>NEW SERVICES!!!</DropdownItem>
+                    <DropdownItem>
+                      <NavLink activeClassName="active" tag={RRNavLink} to="/NewAndHotServices">NEW And HOT SERVICES!!!</NavLink>
+                    </DropdownItem>
                    </DropdownMenu>
                  </UncontrolledDropdown>
                  <NavItem>

@@ -11,10 +11,14 @@ class About extends Component {
             <Col className="image">
               <img src={require('../../assets/images/about.jpg')} style={{
                 width: "100%",
-                marginRight: "1em"
+                marginRight: "1em",
+                padding:"2em"
               }}/>
             </Col>
-            <Col>
+            <Col style={{
+              padding:"2em",
+              marginTop:"5em"
+            }}>
               <p>
                 ST MEDI is a new special medical style skin and teeth care center
                 serving men and women interested in maintaining their overall healthy
@@ -24,12 +28,18 @@ class About extends Component {
                 hair removal and teeth whitening delivered in a comfortable environment
                 designed to pamper and relax while also delivering effective results.
               </p>
+              <br/>
               <p>
                 We provide high quality treatments with consultation at a cost point
                 that allows anyone to utilize our services, combined with a customized,
                 personal experience that will delight and surprise.
               </p>
-              <p><strong>Esthetician Expertise</strong></p>
+              <br/>
+              <br/>
+
+              <p><big>About Esthetician Expertise</big></p>
+              <br/>
+
               <p>
                 Your ST MEDI esthetician will be your trusted partner to assist you
                 on your journey toward attaining confidence in your skin’s appearance.
@@ -43,7 +53,7 @@ class About extends Component {
           </Row>
         </Container>
         <hr/>
-        <NavLink className="d-flex justify-content-end" href="/app">Employee Login</NavLink>
+        <NavLink className="d-flex justify-content-end" href="/app"><small>Employee Login</small></NavLink>
       </main>
     )
   }
