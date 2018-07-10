@@ -42,7 +42,7 @@ class Footer extends Component {
 
         <div className="display-4 middle flex-column" style={{ height: "50%" }}>
           <div>Google Map</div>
-          <div>
+          <div className="color">
             <FontAwesomeIcon icon="check-square" />
             Favorite beverage: <FontAwesomeIcon icon="coffee" transform={{ rotate: 42 }}/>
           </div>

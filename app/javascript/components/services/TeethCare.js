@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {Container, Row, Col} from 'reactstrap';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 
 class TeethCare extends Component {
@@ -29,16 +30,53 @@ class TeethCare extends Component {
             </Row>
           </Container>
         </div>
-        <div className="container-fluid">
-          <Container fluid style={{ paddingTop: "1em" }}>
-            <h4 className="middle">
-              Information
-            </h4>
+        <section className="container-fluid color">
+          <Container fluid id="information" style={{
+              paddingTop: "5em"
+            }}>
+            <Row>
+              <Col style={{
+                  padding: "0px"
+                }} sm={6} md={3}>
+                <div>
+                  <FontAwesomeIcon icon="user-clock" /> &nbsp;
+                  <strong>Treatment Time</strong>
+                  <p>&nbsp;&nbsp;&nbsp;<small> ~40 minutes</small></p>
+                </div>
+              </Col>
+              <Col style={{
+                  padding: "0px"
+                }} sm={6} md={3}>
+                <div>
+                  <FontAwesomeIcon icon="home" /> &nbsp;
+                  <strong>DownTime</strong>
+                  <p>&nbsp;&nbsp;&nbsp;<small>None</small></p>
+                </div>
+              </Col>
+              <Col style={{
+                  padding: "0px"
+                }} sm={6} md={3}>
+                <div>
+                  <FontAwesomeIcon icon="calendar" /> &nbsp;
+                  <strong>Sessions Required</strong>
+                  <p>&nbsp;&nbsp;&nbsp;<small>1 or more</small></p>
+                </div>
+              </Col>
+              <Col style={{
+                padding: "0px"
+              }} sm={6} md={3}>
+              <div>
+                <FontAwesomeIcon icon="meh" /> &nbsp;
+                <strong>Discomfort Level</strong>
+                <p>&nbsp;&nbsp;&nbsp;<small>None</small></p>
+              </div>
+            </Col>
+            </Row>
           </Container>
-        </div>
+        </section>
 
-        <div className="container-fluid" style={{ paddingBottom: "5em" }}>
-          <Container fluid style={{ paddingTop: "1em" }}>
+        <div className="container-fluid">
+          <Container fluid style={{ padding: "5em" }}>
             <Row>
               <Col className="middle" sm={12} md={6} style={{ padding:"0px" }}>
                 <h4>FAQ</h4>
