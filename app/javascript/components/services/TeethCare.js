@@ -6,12 +6,12 @@ class TeethCare extends Component {
   render () {
     return (
       <main className="TeethCare middle flex-column" style={{paddingTop:"10em"}}>
-        <h4 className="display-4">ORGANICE TEETH WHITENING</h4>
+        <h4 className="display-4">ORGANIC TEETH WHITENING</h4>
         <div className="container-fluid">
-          <Container fluid style={{ paddingTop: "1em" }} >
+          <Container fluid style={{ paddingTop: "2em" }} >
             <Row>
               <Col className="middle" sm={12} md={6} style={{ padding:"0px" }}>
-                <img src={require('../../../assets/images/STMediSpa-Skincare.png')}
+                <img src={require('../../../assets/images/TeethCare.png')}
                     style={{ width: "50%" }}/>
               </Col>
               <Col sm={12} md={6} style={{ padding:"0px" }}>
