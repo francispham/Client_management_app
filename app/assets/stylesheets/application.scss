@@ -7,7 +7,6 @@ body {
   background-color: white;
   min-height:150vh;
   font-family: 'Julius Sans One', sans-serif;
-  font-weight: bold;
   font-size: 18px;
 }
 
@@ -58,6 +57,7 @@ main {
 .navbar-default{
   transition:500ms ease;
   background:transparent;
+  font-weight: bold;
 }
 .navbar-default.scrolled{
   background: #F7F8F9;
