@@ -26,10 +26,13 @@ class TeethCare extends Component {
                 <p>
                   We only use a <strong>100% organic, ZERO peroxide</strong> teeth whitening system.
                 </p>
+                <br/>
+                <p>Contact us to schedule your appointment today! </p>
               </Col>
             </Row>
           </Container>
         </div>
+        
         <section className="container-fluid color">
           <Container fluid id="information" style={{
               paddingTop: "5em"
