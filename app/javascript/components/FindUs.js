@@ -5,7 +5,7 @@ import {Container, Row, Col} from 'reactstrap';
 class FindUs extends Component {
   render () {
     return (
-      <main className="FindUs">
+      <div className="FindUs" style={{paddingTop:"10em"}}>
         <section className="container-fluid">
           <h3 className="display-3">Find Us</h3>
           <Container fluid id="FindUs" style={{
@@ -43,7 +43,7 @@ class FindUs extends Component {
             </Row>
           </Container>
         </section>
-      </main>
+      </div>
     )
   }
 }

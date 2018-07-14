@@ -5,7 +5,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 class Laser extends Component {
   render () {
     return (
-      <main className="Laser middle flex-column" style={{paddingTop:"10em"}}>
+      <div className="Laser middle flex-column" style={{paddingTop:"10em"}}>
         <h4 className="display-4">LASER HAIR REMOVAL</h4>
         <div className="container-fluid">
           <Container fluid style={{ paddingTop: "2em" }} >
@@ -96,7 +96,7 @@ class Laser extends Component {
             </Row>
           </Container>
         </div>
-      </main>
+      </div>
     )
   }
 }

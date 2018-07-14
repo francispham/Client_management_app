@@ -6,7 +6,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 class TeethCare extends Component {
   render () {
     return (
-      <main className="TeethCare middle flex-column" style={{paddingTop:"10em"}}>
+      <div className="TeethCare middle flex-column" style={{paddingTop:"10em"}}>
         <h4 className="display-4">ORGANIC TEETH WHITENING</h4>
         <div className="container-fluid">
           <Container fluid style={{ paddingTop: "2em" }} >
@@ -32,7 +32,7 @@ class TeethCare extends Component {
             </Row>
           </Container>
         </div>
-        
+
         <section className="container-fluid color">
           <Container fluid id="information" style={{
               paddingTop: "5em"
@@ -90,7 +90,7 @@ class TeethCare extends Component {
             </Row>
           </Container>
         </div>
-      </main>
+      </div>
     )
   }
 }

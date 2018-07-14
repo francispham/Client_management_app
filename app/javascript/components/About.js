@@ -4,7 +4,7 @@ import { NavLink, Container, Row, Col } from 'reactstrap';
 class About extends Component {
   render () {
     return (
-      <main className="About container-fluid flex-column">
+      <div className="About container-fluid flex-column" style={{paddingTop:"10em"}}>
         <Container fluid>
           <h3 className="display-3">About St MEDI</h3>
           <Row>
@@ -54,7 +54,7 @@ class About extends Component {
         </Container>
         <hr/>
         <NavLink className="d-flex justify-content-end" href="/app"><small>Employee Login</small></NavLink>
-      </main>
+      </div>
     )
   }
 }
