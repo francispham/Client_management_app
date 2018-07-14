@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  Container, Row, Col, Collapse, Button, CardBody, Card,
+  Container, Row, Col, UncontrolledCollapse, Button, CardBody, Card,
   TabContent, TabPane, Nav, NavItem, NavLink, CardTitle, CardText
 } from 'reactstrap';
 import classnames from 'classnames';
@@ -13,13 +13,11 @@ class TeethCare extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      collapse: false,
       activeTab: '1'
     };
   }
 
   toggle(tab) {
-    this.setState({ collapse: !this.state.collapse });
     if (this.state.activeTab !== tab) {
       this.setState({
         activeTab: tab
@@ -114,10 +112,10 @@ class TeethCare extends Component {
             <Row>
               <Col>
               <div>
-                  <Button color="light" onClick={this.toggle} style={{ marginBottom: '1rem' }}>
+                  <Button color="light" id="toggler" style={{ marginBottom: '1rem' }}>
                     Why do I need to have my teeth white?
                   </Button>
-                  <Collapse isOpen={this.state.collapse}>
+                  <UncontrolledCollapse toggler="#toggler">
                     <Card>
                       <CardBody>
                         Anim pariatur cliche reprehenderit,
@@ -126,13 +124,13 @@ class TeethCare extends Component {
                         nesciunt sapiente ea proident.
                       </CardBody>
                     </Card>
-                  </Collapse>
+                  </UncontrolledCollapse>
               </div>
               <div>
-                <Button color="light" onClick={this.toggle} style={{ marginBottom: '1rem' }}>
+                <Button color="light" id="toggler1" style={{ marginBottom: '1rem' }}>
                   When do I need to have my teeth white?
                 </Button>
-                <Collapse isOpen={this.state.collapse}>
+                <UncontrolledCollapse toggler="#toggler1">
                   <Card>
                     <CardBody>
                       Anim pariatur cliche reprehenderit,
@@ -141,7 +139,7 @@ class TeethCare extends Component {
                       nesciunt sapiente ea proident.
                     </CardBody>
                   </Card>
-                </Collapse>
+                </UncontrolledCollapse>
               </div>
             </Col>
               <Col>
@@ -189,19 +187,8 @@ class TeethCare extends Component {
                         </TabPane>
                         <TabPane tabId="3">
                           <Row>
-                            <Col sm="6">
-                              <Card body>
-                                <CardTitle>Special Title Treatment</CardTitle>
-                                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                <Button>Go somewhere</Button>
-                              </Card>
-                            </Col>
-                            <Col sm="6">
-                              <Card body>
-                                <CardTitle>Special Title Treatment</CardTitle>
-                                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                <Button>Go somewhere</Button>
-                              </Card>
+                            <Col sm="12">
+                              <p>Tab 3 Contents</p>
                             </Col>
                           </Row>
                         </TabPane>
