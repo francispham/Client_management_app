@@ -39,8 +39,8 @@ class Laser extends Component {
           </Container>
         </div>
 
-        <section className="container-fluid color">
-          <Container fluid id="information" style={{
+        <section id="information" className="container-fluid color">
+          <Container fluid style={{
               paddingTop: "5em"
             }}>
             <Row>

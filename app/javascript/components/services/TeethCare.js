@@ -1,19 +1,30 @@
 import React, { Component } from "react";
 import {
-  Container, Row, Col, Collapse, Button, CardBody, Card
+  Container, Row, Col, Collapse, Button, CardBody, Card,
+  TabContent, TabPane, Nav, NavItem, NavLink, CardTitle, CardText
 } from 'reactstrap';
+import classnames from 'classnames';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 
 class TeethCare extends Component {
   constructor(props) {
     super(props);
+
     this.toggle = this.toggle.bind(this);
-    this.state = { collapse: false };
+    this.state = {
+      collapse: false,
+      activeTab: '1'
+    };
   }
 
-  toggle() {
+  toggle(tab) {
     this.setState({ collapse: !this.state.collapse });
+    if (this.state.activeTab !== tab) {
+      this.setState({
+        activeTab: tab
+      });
+    }
   }
 
   render () {
@@ -45,8 +56,8 @@ class TeethCare extends Component {
           </Container>
         </div>
 
-        <section className="container-fluid color">
-          <Container fluid id="information" style={{
+        <section id="information" className="container-fluid color">
+          <Container fluid style={{
               paddingTop: "5em"
             }}>
             <Row>
@@ -95,8 +106,15 @@ class TeethCare extends Component {
             <Row>
               <Col className="middle flex-column" sm={12} md={6} style={{ padding:"0px" }}>
                 <h4>FAQ</h4>
-                <div>
-                  <Button color="faded" onClick={this.toggle} style={{ marginBottom: '1rem' }}>
+              </Col>
+              <Col className="middle" sm={12} md={6} style={{ padding:"0px" }}>
+                <h4>Before & After</h4>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+              <div>
+                  <Button color="light" onClick={this.toggle} style={{ marginBottom: '1rem' }}>
                     Why do I need to have my teeth white?
                   </Button>
                   <Collapse isOpen={this.state.collapse}>
@@ -109,10 +127,86 @@ class TeethCare extends Component {
                       </CardBody>
                     </Card>
                   </Collapse>
-                </div>
-              </Col>
-              <Col className="middle" sm={12} md={6} style={{ padding:"0px" }}>
-                <h4>Before & After</h4>
+              </div>
+              <div>
+                <Button color="light" onClick={this.toggle} style={{ marginBottom: '1rem' }}>
+                  When do I need to have my teeth white?
+                </Button>
+                <Collapse isOpen={this.state.collapse}>
+                  <Card>
+                    <CardBody>
+                      Anim pariatur cliche reprehenderit,
+                      enim eiusmod high life accusamus terry richardson ad squid. Nihil
+                      anim keffiyeh helvetica, craft beer labore wes anderson cred
+                      nesciunt sapiente ea proident.
+                    </CardBody>
+                  </Card>
+                </Collapse>
+              </div>
+            </Col>
+              <Col>
+                <div>
+                  <Nav tabs>
+                    <NavItem>
+                      <NavLink
+                        className={classnames({ active: this.state.activeTab === '1' })}
+                        onClick={() => { this.toggle('1'); }}
+                        >
+                          Pierre
+                        </NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink
+                          className={classnames({ active: this.state.activeTab === '2' })}
+                          onClick={() => { this.toggle('2'); }}
+                          >
+                            Alex
+                          </NavLink>
+                        </NavItem>
+                      <NavItem>
+                        <NavLink
+                          className={classnames({ active: this.state.activeTab === '3' })}
+                          onClick={() => { this.toggle('3'); }}
+                          >
+                            Francis
+                          </NavLink>
+                        </NavItem>
+                      </Nav>
+                      <TabContent activeTab={this.state.activeTab}>
+                        <TabPane tabId="1">
+                          <Row>
+                            <Col sm="12">
+                              <p>Tab 1 Contents</p>
+                            </Col>
+                          </Row>
+                        </TabPane>
+                        <TabPane tabId="2">
+                          <Row>
+                            <Col sm="12">
+                              <p>Tab 2 Contents</p>
+                            </Col>
+                          </Row>
+                        </TabPane>
+                        <TabPane tabId="3">
+                          <Row>
+                            <Col sm="6">
+                              <Card body>
+                                <CardTitle>Special Title Treatment</CardTitle>
+                                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                <Button>Go somewhere</Button>
+                              </Card>
+                            </Col>
+                            <Col sm="6">
+                              <Card body>
+                                <CardTitle>Special Title Treatment</CardTitle>
+                                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                <Button>Go somewhere</Button>
+                              </Card>
+                            </Col>
+                          </Row>
+                        </TabPane>
+                      </TabContent>
+                    </div>
               </Col>
             </Row>
           </Container>
