@@ -1,9 +1,21 @@
 import React, { Component } from "react";
-import {Container, Row, Col} from 'reactstrap';
+import {
+  Container, Row, Col, Collapse, Button, CardBody, Card
+} from 'reactstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 
 class TeethCare extends Component {
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
+    this.state = { collapse: false };
+  }
+
+  toggle() {
+    this.setState({ collapse: !this.state.collapse });
+  }
+
   render () {
     return (
       <div className="TeethCare middle flex-column" style={{paddingTop:"10em"}}>
@@ -81,8 +93,23 @@ class TeethCare extends Component {
         <div className="container-fluid">
           <Container fluid style={{ padding: "5em" }}>
             <Row>
-              <Col className="middle" sm={12} md={6} style={{ padding:"0px" }}>
+              <Col className="middle flex-column" sm={12} md={6} style={{ padding:"0px" }}>
                 <h4>FAQ</h4>
+                <div>
+                  <Button color="faded" onClick={this.toggle} style={{ marginBottom: '1rem' }}>
+                    Why do I need to have my teeth white?
+                  </Button>
+                  <Collapse isOpen={this.state.collapse}>
+                    <Card>
+                      <CardBody>
+                        Anim pariatur cliche reprehenderit,
+                        enim eiusmod high life accusamus terry richardson ad squid. Nihil
+                        anim keffiyeh helvetica, craft beer labore wes anderson cred
+                        nesciunt sapiente ea proident.
+                      </CardBody>
+                    </Card>
+                  </Collapse>
+                </div>
               </Col>
               <Col className="middle" sm={12} md={6} style={{ padding:"0px" }}>
                 <h4>Before & After</h4>

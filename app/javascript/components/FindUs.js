@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import { NavLink } from 'reactstrap';
-import {Container, Row, Col} from 'reactstrap';
+import {Container, Row, Col, NavLink} from 'reactstrap';
 
 class FindUs extends Component {
   render () {
     return (
-      <div className="FindUs" style={{paddingTop:"10em"}}>
+      <div className="FindUs" style={{
+        paddingTop:"10em",
+        paddingBottom:"10em"
+      }}>
         <section className="container-fluid">
           <h3 className="display-3">Find Us</h3>
           <Container fluid id="FindUs" style={{
