@@ -38,14 +38,24 @@ class TeethCare extends Component {
               </Col>
               <Col sm={12} md={6} style={{ padding:"0px" }}>
                 <p>
-                  ST Medi Spa wants you to have healthy white teeth and gums. It is our
-                  goal to perfect your smile. Imagine coming in for a single treatment
-                  and emerging with the smile you’ve always wanted! With just one treatment
-                  (~40 minutes) the results are immediate and dramatic.
+                  Starting with healthy teeth and gums, we can perfect your smile
+                  through our Organic Teeth whitening treatment with zero peroxide.
+                  One of the first things people notice is your smile. A beautiful
+                  smile can brighten your life every day, professionally and socially.
+                  And unlike plastic surgery, cosmetic dentistry isn't a major operation.
+                  Imagine coming in for a single appointment or two and emerging
+                  with the smile you've always wanted...no pain, no time taken away
+                  from your busy life. The results are immediate and dramatic.
                 </p>
-                <br/>
                 <p>
-                  We only use a <strong>100% organic, ZERO peroxide</strong> teeth whitening system.
+                  There are many ways we can give you a youthful, attractive,
+                  natural looking smile! If you feel that chipped, stained, or
+                  crooked teeth are "hiding" the real you, then smile design might
+                  be something that you would like to consider. You can feel relax
+                  and get excellent service, we know that going to the dentist
+                  can be expensive and scary for some people, so we have include
+                  friendly and attentive stuff to cater to your needs once you step
+                  into.
                 </p>
                 <br/>
                 <p>Contact us to schedule your appointment today! </p>
