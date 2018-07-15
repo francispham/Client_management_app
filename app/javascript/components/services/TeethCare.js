@@ -150,7 +150,7 @@ class TeethCare extends Component {
                         className={classnames({ active: this.state.activeTab === '1' })}
                         onClick={() => { this.toggle('1'); }}
                         >
-                          Pierre
+                          Alvin
                         </NavLink>
                       </NavItem>
                       <NavItem>
@@ -158,7 +158,7 @@ class TeethCare extends Component {
                           className={classnames({ active: this.state.activeTab === '2' })}
                           onClick={() => { this.toggle('2'); }}
                           >
-                            Alex
+                            Mina
                           </NavLink>
                         </NavItem>
                       <NavItem>
@@ -166,7 +166,7 @@ class TeethCare extends Component {
                           className={classnames({ active: this.state.activeTab === '3' })}
                           onClick={() => { this.toggle('3'); }}
                           >
-                            Francis
+                            Karim
                           </NavLink>
                         </NavItem>
                       </Nav>
@@ -174,21 +174,30 @@ class TeethCare extends Component {
                         <TabPane tabId="1">
                           <Row>
                             <Col sm="12">
-                              <p>Tab 1 Contents</p>
+                              <p>
+                                <img src={require('../../../assets/images/TeethAlvin.jpg')}
+                                    style={{ width: "100%" }}/>
+                              </p>
                             </Col>
                           </Row>
                         </TabPane>
                         <TabPane tabId="2">
                           <Row>
                             <Col sm="12">
-                              <p>Tab 2 Contents</p>
+                              <p>
+                                <img src={require('../../../assets/images/TeethMina.jpg')}
+                                    style={{ width: "100%" }}/>
+                              </p>
                             </Col>
                           </Row>
                         </TabPane>
                         <TabPane tabId="3">
                           <Row>
                             <Col sm="12">
-                              <p>Tab 3 Contents</p>
+                              <p>
+                                <img src={require('../../../assets/images/TeethKarim.jpg')}
+                                    style={{ width: "100%" }}/>
+                              </p>
                             </Col>
                           </Row>
                         </TabPane>
