@@ -121,7 +121,7 @@ class TeethCare extends Component {
             </Row>
             <Row>
               <Col>
-              <div>
+                <div>
                   <Button color="light" id="toggler" style={{ marginBottom: '1rem' }}>
                     Why do I need to have my teeth white?
                   </Button>
@@ -135,23 +135,23 @@ class TeethCare extends Component {
                       </CardBody>
                     </Card>
                   </UncontrolledCollapse>
-              </div>
-              <div>
-                <Button color="light" id="toggler1" style={{ marginBottom: '1rem' }}>
-                  When do I need to have my teeth white?
-                </Button>
-                <UncontrolledCollapse toggler="#toggler1">
-                  <Card>
-                    <CardBody>
-                      Anim pariatur cliche reprehenderit,
-                      enim eiusmod high life accusamus terry richardson ad squid. Nihil
-                      anim keffiyeh helvetica, craft beer labore wes anderson cred
-                      nesciunt sapiente ea proident.
-                    </CardBody>
-                  </Card>
-                </UncontrolledCollapse>
-              </div>
-            </Col>
+                </div>
+                <div>
+                  <Button color="light" id="toggler1" style={{ marginBottom: '1rem' }}>
+                    When do I need to have my teeth white?
+                  </Button>
+                  <UncontrolledCollapse toggler="#toggler1">
+                    <Card>
+                      <CardBody>
+                        Anim pariatur cliche reprehenderit,
+                        enim eiusmod high life accusamus terry richardson ad squid. Nihil
+                        anim keffiyeh helvetica, craft beer labore wes anderson cred
+                        nesciunt sapiente ea proident.
+                      </CardBody>
+                    </Card>
+                  </UncontrolledCollapse>
+                </div>
+              </Col>
               <Col>
                 <div>
                   <Nav tabs>
