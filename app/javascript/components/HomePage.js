@@ -12,7 +12,7 @@ const jumStyle = {
 class HomePage extends React.Component {
   render() {
     return (<div>
-      <Jumbotron className="d-flex flex-column justify-content-center align-items-center HomePage" fluid style={jumStyle}>
+      <Jumbotron id="Home" className="middle flex-column HomePage" fluid style={jumStyle}>
         <p className="lead">
           <img src={require('../../assets/images/logo.png')} style={{
               height: "50vh"

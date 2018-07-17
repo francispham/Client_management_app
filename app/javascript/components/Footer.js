@@ -17,20 +17,28 @@ class Footer extends Component {
         <div className="container-fluid">
           <Row className="">
             <Col className="HorLogo middle">
-              <img src={require('../../assets/images/LogoHorizantal.png')} style={{
-                width: "35vh"
-              }}/>
+                <img src={require('../../assets/images/LogoHorizantal.png')} style={{
+                  width: "35vh"
+                }}/>
             </Col>
 
             <Col className="Social display-4 middle color">
-                <FontAwesomeIcon icon={['fab', 'facebook']} pull="right"/>
+              <a target = "_blank" href = 'https://www.facebook.com/STMEDISPA/'>
+                <FontAwesomeIcon icon={['fab', 'facebook']} pull="right" href="www.facebook.com"/>
+              </a>
+              <a target = "_blank" href = 'https://www.instagram.com/stmedispa/'>
                 <FontAwesomeIcon icon={['fab', 'instagram']} pull="right"/>
+              </a>
                 <FontAwesomeIcon icon={['fab', 'google']} pull="right"/>
             </Col>
 
             <Col className= "middle">
-              <FontAwesomeIcon icon='envelope' className="Mail color"/> &nbsp;
-                STMedi@STMedi.com
+              <a href = 'mailto:info@stmedispa.com'>
+                <h2>
+                  <FontAwesomeIcon icon='envelope' className="Mail color"/> &nbsp;
+                  info@stmedispa.com
+                </h2>
+              </a>
             </Col>
           </Row>
         </div>

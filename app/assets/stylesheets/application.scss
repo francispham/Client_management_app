@@ -14,6 +14,10 @@ section {
   height: auto;
 }
 
+a {
+  color: #BB972E;
+}
+
 main {
   padding-top: 6em;
   display: grid;
@@ -48,6 +52,7 @@ main {
 .color {
   color: #BB972E;
 }
+
 .middle {
   display: flex;
   justify-content: center;
@@ -72,6 +77,11 @@ main {
   margin-bottom: 0px;
 }
 
+.image {
+  padding: 0px;
+  margin: 0px;
+}
+
 #fade{
   height: 30vh;
   background-color: rgba(69, 65, 89,.2);
@@ -79,11 +89,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center
-}
-
-.image {
-  padding: 0px;
-  margin: 0px;
 }
 
 @media only screen and (min-width: 768px) {
