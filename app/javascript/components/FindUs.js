@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Container, Row, Col, NavLink} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 class FindUs extends Component {
   render () {
