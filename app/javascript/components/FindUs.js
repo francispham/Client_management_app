@@ -32,7 +32,7 @@ class FindUs extends Component {
                   padding: "0px"
                 }} sm={6} md={3}>
                 <div id="fade">
-                  <strong>Social Media</strong>
+                  <strong>Social Media</strong> 
                 </div>
               </Col>
               <Col style={{

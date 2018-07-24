@@ -22,9 +22,47 @@ class Skincare extends Component {
                   padding: "5px"
                 }} sm={6} md={3}>
                   <Card>
-                    <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                    <CardImg top width="100%"
+                      src={require('../../../assets/images/Votiva_edited_sunray.jpg')}
+                      alt="Card image cap"
+                    />
+                    <CardBody>
+                      <CardTitle>VOTIVA</CardTitle>
+                      <CardText>
+                        Gentle and effective treatment for feminine health that
+                        offers immediate results with continued improvement over time.
+                      </CardText>
+                    </CardBody>
+                  </Card>
+              </Col>
+              <Col style={{
+                  padding: "5px"
+                }} sm={6} md={3}>
+                  <Card>
+                    <CardImg top width="100%"
+                      src={require('../../../assets/images/bodyFX1.jpg')}
+                      alt="Card image cap"
+                    />
                     <CardBody>
                       <CardTitle>BODY FX</CardTitle>
+                      <CardText>
+                        BodyFX is a new, long lasting, non-invasive solution to
+                        reduce the unsightly appearance of cellulite. BodyFX will
+                        reshape your body to provide a non-surgical alternative to liposuction.
+                      </CardText>
+                    </CardBody>
+                  </Card>
+              </Col>
+              <Col style={{
+                  padding: "5px"
+                }} sm={6} md={3}>
+                  <Card>
+                    <CardImg top width="100%"
+                      src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                      alt="Card image cap"
+                    />
+                    <CardBody>
+                      <CardTitle>PLUS by Inmode</CardTitle>
                       <CardText>
                         Some quick example text to build on the card
                         title and make up the bulk of the card's content.
@@ -36,40 +74,14 @@ class Skincare extends Component {
                   padding: "5px"
                 }} sm={6} md={3}>
                   <Card>
-                    <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                    <CardImg top width="100%"
+                      src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                      alt="Card image cap"
+                    />
                     <CardBody>
-                      <CardTitle>BODY FX</CardTitle>
+                      <CardTitle>Medical Facials</CardTitle>
                       <CardText>
-                        Some quick example text to build on the card
-                        title and make up the bulk of the card's content.
-                      </CardText>
-                    </CardBody>
-                  </Card>
-              </Col>
-              <Col style={{
-                  padding: "5px"
-                }} sm={6} md={3}>
-                  <Card>
-                    <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-                    <CardBody>
-                      <CardTitle>BODY FX</CardTitle>
-                      <CardText>
-                        Some quick example text to build on the card
-                        title and make up the bulk of the card's content.
-                      </CardText>
-                    </CardBody>
-                  </Card>
-              </Col>
-              <Col style={{
-                  padding: "5px"
-                }} sm={6} md={3}>
-                  <Card>
-                    <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-                    <CardBody>
-                      <CardTitle>BODY FX</CardTitle>
-                      <CardText>
-                        Some quick example text to build on the card
-                        title and make up the bulk of the card's content.
+                        Chemical Peels
                       </CardText>
                     </CardBody>
                   </Card>
@@ -80,12 +92,14 @@ class Skincare extends Component {
                   padding: "5px"
                 }} sm={6} md={3}>
                   <Card>
-                    <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                    <CardImg top width="100%"
+                      src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                      alt="Card image cap"
+                    />
                     <CardBody>
-                      <CardTitle>BODY FX</CardTitle>
+                      <CardTitle>Skin Exfoliations</CardTitle>
                       <CardText>
-                        Some quick example text to build on the card
-                        title and make up the bulk of the card's content.
+  
                       </CardText>
                     </CardBody>
                   </Card>
@@ -94,12 +108,14 @@ class Skincare extends Component {
                   padding: "5px"
                 }} sm={6} md={3}>
                   <Card>
-                    <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                    <CardImg top width="100%"
+                      src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                      alt="Card image cap"
+                    />
                     <CardBody>
-                      <CardTitle>BODY FX</CardTitle>
+                      <CardTitle>Skin Tightening</CardTitle>
                       <CardText>
-                        Some quick example text to build on the card
-                        title and make up the bulk of the card's content.
+
                       </CardText>
                     </CardBody>
                   </Card>
@@ -108,12 +124,15 @@ class Skincare extends Component {
                   padding: "5px"
                 }} sm={6} md={3}>
                   <Card>
-                    <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                    <CardImg top width="100%"
+                      src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                      alt="Card image cap"
+                    />
                     <CardBody>
-                      <CardTitle>BODY FX</CardTitle>
+                      <CardTitle>Dermalese</CardTitle>
                       <CardText>
-                        Some quick example text to build on the card
-                        title and make up the bulk of the card's content.
+                        The Skin Rejuvenation treatment helps reduce and heal
+                        several skin issues
                       </CardText>
                     </CardBody>
                   </Card>
@@ -122,12 +141,13 @@ class Skincare extends Component {
                   padding: "5px"
                 }} sm={6} md={3}>
                   <Card>
-                    <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                    <CardImg top width="100%"
+                      src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                      alt="Card image cap"
+                    />
                     <CardBody>
-                      <CardTitle>BODY FX</CardTitle>
+                      <CardTitle>IPL Hair Removal</CardTitle>
                       <CardText>
-                        Some quick example text to build on the card
-                        title and make up the bulk of the card's content.
                       </CardText>
                     </CardBody>
                   </Card>
