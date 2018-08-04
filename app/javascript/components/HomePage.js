@@ -1,6 +1,7 @@
 import React from 'react';
-import {Jumbotron, Button} from 'reactstrap';
-import {Container, Row, Col} from 'reactstrap';
+import {
+  Jumbotron, Button, Container, Row, Col
+ } from 'reactstrap';
 
 import Landing from '../../assets/images/Landing1.jpg'
 

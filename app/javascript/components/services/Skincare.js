@@ -62,7 +62,7 @@ class Skincare extends Component {
                       alt="Card image cap"
                     />
                     <CardBody>
-                      <CardTitle>PLUS by Inmode</CardTitle>
+                      <CardTitle>Forma Plus by Inmode</CardTitle>
                       <CardText>
                         Some quick example text to build on the card
                         title and make up the bulk of the card's content.
@@ -79,9 +79,9 @@ class Skincare extends Component {
                       alt="Card image cap"
                     />
                     <CardBody>
-                      <CardTitle>Medical Facials</CardTitle>
+                      <CardTitle>Fractora</CardTitle>
                       <CardText>
-                        Chemical Peels
+                        Bla Bla Bla
                       </CardText>
                     </CardBody>
                   </Card>
@@ -99,7 +99,7 @@ class Skincare extends Component {
                     <CardBody>
                       <CardTitle>Skin Exfoliations</CardTitle>
                       <CardText>
-  
+
                       </CardText>
                     </CardBody>
                   </Card>
