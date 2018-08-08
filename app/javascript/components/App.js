@@ -10,12 +10,17 @@ import HomePage from "./HomePage";
 import { About } from "./About";
 import { FindUs } from "./FindUs";
 import { NotFoundPage } from "./NotFoundPage";
-import { Skincare } from "./services/Skincare";
 import { Laser } from "./services/Laser";
 import { TeethCare } from "./services/TeethCare";
 import { NewHot } from "./services/NewHot";
 import { LatestNews } from "./LatestNews";
 import { Footer } from "./Footer";
+import { Skincare } from "./services/Skincare";
+
+import { BodyFX } from "./services/skincare/BodyFX";
+import { FormaPlus } from "./services/skincare/FormaPlus";
+import { Fractora } from "./services/skincare/Fractora";
+import { Votiva } from "./services/skincare/Votiva";
 
 import fontawesome from '@fortawesome/fontawesome';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
@@ -45,6 +50,10 @@ class App extends Component {
           <Route exact path="/Skincare" component={Skincare} />
           <Route exact path="/LaserHairRemoval" component={Laser} />
           <Route exact path="/OrganicTeethWhitening" component={TeethCare} />
+          <Route exact path="/BodyFX" component={BodyFX} />
+          <Route exact path="/FormaPlus" component={FormaPlus} />
+          <Route exact path="/Fractora" component={Fractora} />
+          <Route exact path="/Votiva" component={Votiva} />
           <Route exact path="/NewAndHotServices" component={NewHot} />
           <Route exact path="/LatestNews" component={LatestNews} />
           <Route exact path="/About" component={About} />

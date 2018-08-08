@@ -7,7 +7,7 @@ import classnames from 'classnames';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 
-class TeethCare extends Component {
+class Votiva extends Component {
   constructor(props) {
     super(props);
 
@@ -27,8 +27,8 @@ class TeethCare extends Component {
 
   render () {
     return (
-      <div className="TeethCare middle flex-column" style={{paddingTop:"10em"}}>
-        <h4 className="display-4">ORGANIC TEETH WHITENING</h4>
+      <div className="Votiva middle flex-column" style={{paddingTop:"10em"}}>
+        <h4 className="display-4">Votiva</h4>
         <div className="container-fluid">
           <Container fluid style={{ paddingTop: "2em" }} >
             <Row>
@@ -222,4 +222,4 @@ class TeethCare extends Component {
   }
 }
 
-export { TeethCare };
+export { Votiva };
