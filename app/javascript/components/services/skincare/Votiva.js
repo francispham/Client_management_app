@@ -33,7 +33,7 @@ class TeethCare extends Component {
           <Container fluid style={{ paddingTop: "2em" }} >
             <Row>
               <Col className="middle" sm={12} md={6} style={{ padding:"0px" }}>
-                <img src={require('../../../assets/images/TeethCare.png')}
+                <img src={require('../../../../assets/images/TeethCare.png')}
                     style={{ width: "50%" }}/>
               </Col>
               <Col sm={12} md={6} style={{ padding:"0px" }}>
@@ -185,7 +185,7 @@ class TeethCare extends Component {
                           <Row>
                             <Col sm="12">
                               <p>
-                                <img src={require('../../../assets/images/TeethAlvin.jpg')}
+                                <img src={require('../../../../assets/images/TeethAlvin.jpg')}
                                     style={{ width: "100%" }}/>
                               </p>
                             </Col>
@@ -195,7 +195,7 @@ class TeethCare extends Component {
                           <Row>
                             <Col sm="12">
                               <p>
-                                <img src={require('../../../assets/images/TeethMina.jpg')}
+                                <img src={require('../../../../assets/images/TeethMina.jpg')}
                                     style={{ width: "100%" }}/>
                               </p>
                             </Col>
@@ -205,7 +205,7 @@ class TeethCare extends Component {
                           <Row>
                             <Col sm="12">
                               <p>
-                                <img src={require('../../../assets/images/TeethKarim.jpg')}
+                                <img src={require('../../../../assets/images/TeethKarim.jpg')}
                                     style={{ width: "100%" }}/>
                               </p>
                             </Col>
